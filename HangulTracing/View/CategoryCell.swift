@@ -7,17 +7,13 @@
 //
 
 import UIKit
-
-class DeleteBtn: UIButton {
-  private(set) var parentCell: UICollectionViewCell?
-  func setParentCell(cell: UICollectionViewCell) {
-    self.parentCell = cell
-  }
-}
+import RxSwift
+import RxCocoa
+import Action
 
 class CategoryCell: UICollectionViewCell {
-  var deleteBtnDelegate: DeleteBtnDelegate?
-  private(set) var titleLabel: UILabel = {
+  static let reuseIdentifier = "CategoryCell"
+  private lazy var titleLabel: UILabel = {
     let label = UILabel()
     label.textAlignment = .center
     label.font = label.font.withSize(50)
@@ -27,8 +23,8 @@ class CategoryCell: UICollectionViewCell {
     label.textColor = UIColor(hex: "65418F")
     return label
   }()
-  private(set) var deleteBtn: DeleteBtn = {
-    let btn = DeleteBtn()
+  private lazy var deleteBtn: UIButton = {
+    let btn = UIButton()
     btn.setImage(UIImage(named: "delete"), for: .normal)
     return btn
   }()
@@ -41,8 +37,6 @@ class CategoryCell: UICollectionViewCell {
     contentView.addSubview(titleLabel)
     contentView.addSubview(deleteBtn)
     deleteBtn.isHidden = true
-    deleteBtn.setParentCell(cell: self)
-    deleteBtn.addTarget(self, action: #selector(CategoryCell.deleteBtnTapped), for: .touchUpInside)
     
     titleLabel.snp.makeConstraints { (make) in
       make.edges.equalTo(contentView)
@@ -58,7 +52,9 @@ class CategoryCell: UICollectionViewCell {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func configCell(category: Category, cellMode: CellMode) {
+  func configCell(category: Category, cellMode: CellMode, action: CocoaAction) {
+    deleteBtn.rx.action = action
+    
     if cellMode == .normal {
       deleteBtn.isHidden = true
     } else {
@@ -66,10 +62,6 @@ class CategoryCell: UICollectionViewCell {
       wiggle()
     }
     titleLabel.text = category.title
-  }
-  
-  @objc func deleteBtnTapped() {
-    self.deleteBtnDelegate?.deleteBtnTapped(sender: deleteBtn)
   }
   
 }

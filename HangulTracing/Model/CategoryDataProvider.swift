@@ -9,32 +9,15 @@
 import UIKit
 
 class CategoryDataProvider: NSObject {
-  private(set) weak var parentVC: CategoryVC!
+  private weak var parentVC: CategoryViewController!
   var categoryManager = CategoryManager.instance
   var cellMode: CellMode = .normal
-  let itemsPerRow: CGFloat = 2
-  let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
-  var audioPlayer = SoundPlayer()
+  private let itemsPerRow: CGFloat = 2
+  private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+  private var audioPlayer = SoundPlayer()
   
-  func setParentVC(vc: CategoryVC) {
+  func setParentVC(vc: CategoryViewController) {
     self.parentVC = vc
-  }
-}
-
-extension CategoryDataProvider: UICollectionViewDataSource {
-  
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return categoryManager.categories.count
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let category = categoryManager.categories[indexPath.item]
-    if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as? CategoryCell {
-      cell.configCell(category: category, cellMode: cellMode)
-      cell.deleteBtnDelegate = parentVC
-      return cell
-    }
-    return CategoryCell()
   }
 }
 

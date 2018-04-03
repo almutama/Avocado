@@ -13,7 +13,7 @@ class CardManager: NSObject {
   
   static let instance = CardManager()
   
-  var realm = try! Realm()
+  private var realm = try! Realm()
   var toDoCards: Results<WordCard>!
   var toDoCount: Int { return toDoCards.count }
   var title: String?
@@ -51,6 +51,10 @@ class CardManager: NSObject {
     try! realm.write {
       realm.delete(toDoCards)
     }
+  }
+  
+  func canPaging(page: Int) -> Bool {
+    return page < toDoCount - 1
   }
   
   //TDD 초기화

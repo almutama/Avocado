@@ -14,10 +14,10 @@ enum CellMode: Int {
 }
 
 class DataProvider: NSObject {
-  private(set) weak var parentVC: CardListVC!
+  private var parentVC: CardListVC!
   weak var cardManager: CardManager?
   var cellMode: CellMode = .normal
-  var audioPlayer = SoundPlayer()
+  private var audioPlayer = SoundPlayer()
   
   func setParentVC(vc: CardListVC) {
     self.parentVC = vc
@@ -35,7 +35,6 @@ extension DataProvider: UICollectionViewDataSource {
     guard let cardManager = cardManager else { fatalError() }
     if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WordCardCell", for: indexPath) as? WordCardCell {
       cell.configCell(card: cardManager.cardAt(index: indexPath.item), cellMode: cellMode)
-      cell.deleteBtnDelegate = parentVC
       return cell
     } else {
       return WordCardCell()

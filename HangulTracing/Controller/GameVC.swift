@@ -14,9 +14,9 @@ import Photos
 
 class GameVC: UIViewController, orientationIsOnlyLandScapeRight {
   
-  private(set) var didSetupConstraints = false
-  private(set) var playerVC: PlayerVC?
-  private(set) var audioPlayer = SoundPlayer()
+  private var didSetupConstraints = false
+  private weak var playerVC: PlayerVC?
+  private var audioPlayer = SoundPlayer()
   private let session = AVCaptureSession()
   private let sessionQueue = DispatchQueue(label: "session queue")
   enum SessionSetupResult {
@@ -24,24 +24,24 @@ class GameVC: UIViewController, orientationIsOnlyLandScapeRight {
     case notAuthorized
     case configurationFailed
   }
-  private(set) var setupResult: SessionSetupResult = .success
-  private(set) var videoDeviceInput: AVCaptureDeviceInput!
-  private(set) var movieFileOutput: AVCaptureMovieFileOutput?
-  private(set) var backgroundRecordingID: UIBackgroundTaskIdentifier?
-  private(set) var timerLabel: UILabel = {
+  private var setupResult: SessionSetupResult = .success
+  private var videoDeviceInput: AVCaptureDeviceInput!
+  private var movieFileOutput: AVCaptureMovieFileOutput?
+  private var backgroundRecordingID: UIBackgroundTaskIdentifier?
+  private lazy var timerLabel: UILabel = {
     let label = UILabel()
     label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     label.textAlignment = .center
     label.font = label.font.withSize(30)
     return label
   }()
-  private(set) var timer: Timer!
-  private(set) var seconds = 60
-  private(set) var speechSynthesizer: AVSpeechSynthesizer!
-  private(set) var blurEffectView: UIVisualEffectView!
-  private(set) var motionManager: CMMotionManager!
-  private(set) var cardManager = CardManager.instance
-  private(set) var scrollView: UIScrollView = {
+  private var timer: Timer!
+  private var seconds = 60
+  private var speechSynthesizer: AVSpeechSynthesizer!
+  private var blurEffectView: UIVisualEffectView!
+  private var motionManager: CMMotionManager!
+  private var cardManager = CardManager.instance
+  private lazy var scrollView: UIScrollView = {
     let scrollView = UIScrollView()
     scrollView.showsHorizontalScrollIndicator = false
     scrollView.showsVerticalScrollIndicator = false
@@ -50,9 +50,9 @@ class GameVC: UIViewController, orientationIsOnlyLandScapeRight {
     scrollView.bounces = false
     return scrollView
   }()
-  private(set) var startView: GameView!
-  private(set) var greatCount: Int!
-  private(set) var exitBtn: UIButton!
+  private var startView: GameView!
+  private var greatCount: Int!
+  private var exitBtn: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -155,10 +155,10 @@ class GameVC: UIViewController, orientationIsOnlyLandScapeRight {
   func goToNextWords() {
     
     let page = Int(scrollView.contentOffset.x / scrollView.bounds.size.width)
-    if page < cardManager.toDoCount - 1 {
+    if cardManager.canPaging(page: page) {
       UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
         self.scrollView.contentOffset.x = self.scrollView.bounds.size.width * CGFloat(page + 1)}, completion: nil)
-    } else if page == cardManager.toDoCount - 1 {
+    } else {
       timer.invalidate()
       let scoreView = GameView(frame: CGRect(x: UIScreen.main.bounds.width * CGFloat(cardManager.toDoCount), y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), word: "\(greatCount!) 점 / \(cardManager.toDoCount) 점")
       

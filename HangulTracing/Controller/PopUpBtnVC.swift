@@ -9,23 +9,23 @@
 import UIKit
 
 class PopUpBtnVC: UIViewController {
-  private(set) weak var parentVC: UIViewController?
-  private(set) var didSetupConstraints = false
-  private(set) var hideBtn: UIButton = {
+  private weak var parentVC: UIViewController?
+  private var didSetupConstraints = false
+  private lazy var hideBtn: UIButton = {
     let btn = UIButton()
     btn.backgroundColor = UIColor.white
     btn.layer.cornerRadius = 35
     btn.setImage(UIImage(named: "hideBtn"), for: .normal)
     return btn
   }()
-  private(set) var deleteCardBtn: UIButton = {
+  private lazy var deleteCardBtn: UIButton = {
     let btn = UIButton()
     btn.backgroundColor = UIColor(hex: "5F9EF2")
     btn.layer.cornerRadius = 25
     btn.setImage(UIImage(named: "trash"), for: .normal)
     return btn
   }()
-  private(set) var deleteCardLabel: UILabel = {
+  private lazy var deleteCardLabel: UILabel = {
     let label = UILabel()
     label.textAlignment = .center
     label.font = label.font.withSize(50)
@@ -36,14 +36,14 @@ class PopUpBtnVC: UIViewController {
     label.text = "카테고리 삭제"
     return label
   }()
-  private(set) var addCardBtn: UIButton = {
+  private lazy var addCardBtn: UIButton = {
     let btn = UIButton()
     btn.backgroundColor = UIColor(hex: "5F9EF2")
     btn.layer.cornerRadius = 25
     btn.setImage(UIImage(named: "addCard"), for: .normal)
     return btn
   }()
-  private(set) var addCardLabel: UILabel = {
+  private lazy var addCardLabel: UILabel = {
     let label = UILabel()
     label.textAlignment = .center
     label.font = label.font.withSize(50)
@@ -54,14 +54,14 @@ class PopUpBtnVC: UIViewController {
     label.text = "카테고리 추가"
     return label
   }()
-  private(set) var gameBtn: UIButton = {
+  private lazy var gameBtn: UIButton = {
     let btn = UIButton()
     btn.backgroundColor = UIColor(hex: "5F9EF2")
     btn.layer.cornerRadius = 25
     btn.setImage(UIImage(named: "game"), for: .normal)
     return btn
   }()
-  private(set) var gameLabel: UILabel = {
+  private lazy var gameLabel: UILabel = {
     let label = UILabel()
     label.textAlignment = .center
     label.font = label.font.withSize(50)
@@ -72,14 +72,14 @@ class PopUpBtnVC: UIViewController {
     label.text = "스피드퀴즈"
     return label
   }()
-  private(set) var presenting = true
-  private(set) var popUpView: UIView = {
+  private var presenting = true
+  private lazy var popUpView: UIView = {
     let view = UIView()
     view.layer.cornerRadius = 15
     view.backgroundColor = UIColor(hex: "1EBBBC")
     return view
   }()
-  private(set) var categoryTxtField: UITextField = {
+  private lazy var categoryTxtField: UITextField = {
     let txtField = UITextField()
     txtField.backgroundColor = UIColor.white
     txtField.keyboardAppearance = .dark
@@ -95,14 +95,14 @@ class PopUpBtnVC: UIViewController {
     txtField.textColor = UIColor(hex: "65418F")
     return txtField
   }()
-  private(set) var cancleBtn: UIButton = {
+  private lazy var cancleBtn: UIButton = {
     let btn = UIButton()
     btn.layer.cornerRadius = 15
     btn.setTitle("취소", for: .normal)
     btn.backgroundColor = UIColor(hex: "F8CF41")
     return btn
   }()
-  private(set) var saveBtn: UIButton = {
+  private lazy var saveBtn: UIButton = {
     let btn = UIButton()
     btn.layer.cornerRadius = 15
     btn.setTitle("저장", for: .normal)
@@ -228,7 +228,7 @@ class PopUpBtnVC: UIViewController {
   }
   
   @objc func saveBtnTapped(_ sender: UIButton) {
-    guard let parentVC = parentVC as? CategoryVC else { return }
+    guard let parentVC = parentVC as? CategoryViewController else { return }
     guard let text = categoryTxtField.text , !text.components(separatedBy: " ").joined(separator: "").isEmpty else { return }
     view.endEditing(true)
     parentVC.categoryManager.addCategory(newCategory: Category(category: text))
@@ -254,7 +254,7 @@ class PopUpBtnVC: UIViewController {
           })
         }
       }
-    } else if parentVC is CategoryVC {
+    } else if parentVC is CategoryViewController {
       popUpView.isHidden = false
       UIView.animate(withDuration: 1.0, animations: {
         self.popUpView.transform = CGAffineTransform(translationX: 0, y: UIScreen.main.bounds.height / 2)
@@ -278,8 +278,8 @@ class PopUpBtnVC: UIViewController {
   }
   
   @objc func deleteBtnTapped(_ sender: UIButton) {
-    if parentVC is CategoryVC {
-      guard let parentVC = parentVC as? CategoryVC else { return }
+    if parentVC is CategoryViewController {
+      guard let parentVC = parentVC as? CategoryViewController else { return }
       if parentVC.categoryDataProvider.cellMode == .normal {
         parentVC.categoryDataProvider.cellMode = .delete
       } else {

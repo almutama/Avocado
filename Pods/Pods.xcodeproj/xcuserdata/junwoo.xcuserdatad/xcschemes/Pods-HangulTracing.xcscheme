@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C4DB6902F23AAD106680CCCBD5536633"
+               BlueprintIdentifier = "219DBF78D8DBFD61F499524D5E962766"
                BuildableName = "Pods_HangulTracing.framework"
                BlueprintName = "Pods-HangulTracing"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C4DB6902F23AAD106680CCCBD5536633"
+            BlueprintIdentifier = "219DBF78D8DBFD61F499524D5E962766"
             BuildableName = "Pods_HangulTracing.framework"
             BlueprintName = "Pods-HangulTracing"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		44ED2227C34A2DD12A2FB21E /* Pods_HangulTracingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF5C07A6797CBFBD7394FE1 /* Pods_HangulTracingTests.framework */; };
 		4802982D1FC836D400A5DB3A /* PopUpBtnVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802982C1FC836D400A5DB3A /* PopUpBtnVC.swift */; };
+		4847833F207380A300C5A60F /* LocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847833E207380A300C5A60F /* LocalService.swift */; };
+		484783422073848400C5A60F /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484783412073848400C5A60F /* CategoryViewModel.swift */; };
 		484979AE1FB15F37000C1E2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979AD1FB15F37000C1E2A /* Constants.swift */; };
 		484979AF1FB1659B000C1E2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979AD1FB15F37000C1E2A /* Constants.swift */; };
 		484979B11FB16B80000C1E2A /* TracingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979B01FB16B80000C1E2A /* TracingVC.swift */; };
@@ -38,7 +40,7 @@
 		484B620E1FBD8FB600AE065F /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B620D1FBD8FB600AE065F /* Shuffle.swift */; };
 		484B62101FBE7FC600AE065F /* CellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B620F1FBE7FC600AE065F /* CellVC.swift */; };
 		484B62121FBEDD9700AE065F /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B62111FBEDD9700AE065F /* PopAnimator.swift */; };
-		484B62171FC01F1100AE065F /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B62161FC01F1100AE065F /* CategoryVC.swift */; };
+		484B62171FC01F1100AE065F /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B62161FC01F1100AE065F /* CategoryViewController.swift */; };
 		484B62191FC0224400AE065F /* CategoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B62181FC0224400AE065F /* CategoryDataProvider.swift */; };
 		484B621B1FC0295100AE065F /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B621A1FC0295100AE065F /* CategoryCell.swift */; };
 		484B621D1FC1816600AE065F /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B621C1FC1816600AE065F /* CategoryManager.swift */; };
@@ -84,6 +86,8 @@
 /* Begin PBXFileReference section */
 		373FFA930EF7B5507EF3477D /* Pods-HangulTracing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HangulTracing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HangulTracing/Pods-HangulTracing.debug.xcconfig"; sourceTree = "<group>"; };
 		4802982C1FC836D400A5DB3A /* PopUpBtnVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpBtnVC.swift; sourceTree = "<group>"; };
+		4847833E207380A300C5A60F /* LocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalService.swift; sourceTree = "<group>"; };
+		484783412073848400C5A60F /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		484979AD1FB15F37000C1E2A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		484979B01FB16B80000C1E2A /* TracingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingVC.swift; sourceTree = "<group>"; };
 		484979B21FB16B90000C1E2A /* TracingVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingVCTests.swift; sourceTree = "<group>"; };
@@ -111,7 +115,7 @@
 		484B620D1FBD8FB600AE065F /* Shuffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shuffle.swift; sourceTree = "<group>"; };
 		484B620F1FBE7FC600AE065F /* CellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellVC.swift; sourceTree = "<group>"; };
 		484B62111FBEDD9700AE065F /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
-		484B62161FC01F1100AE065F /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
+		484B62161FC01F1100AE065F /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		484B62181FC0224400AE065F /* CategoryDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDataProvider.swift; sourceTree = "<group>"; };
 		484B621A1FC0295100AE065F /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		484B621C1FC1816600AE065F /* CategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
@@ -177,6 +181,15 @@
 				EDF5C07A6797CBFBD7394FE1 /* Pods_HangulTracingTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		484783402073847300C5A60F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				484B62161FC01F1100AE065F /* CategoryViewController.swift */,
+				484783412073848400C5A60F /* CategoryViewModel.swift */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		484979AC1FB15F27000C1E2A /* Constants */ = {
@@ -262,6 +275,7 @@
 		487037B01FAC3D9200A966A2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				484783402073847300C5A60F /* Category */,
 				484979B01FB16B80000C1E2A /* TracingVC.swift */,
 				484979C41FB2FED5000C1E2A /* InputVC.swift */,
 				484979C61FB30618000C1E2A /* CameraVC.swift */,
@@ -269,7 +283,6 @@
 				484979E81FB6C450000C1E2A /* GameVC.swift */,
 				484B62091FBD729F00AE065F /* PlayerVC.swift */,
 				484B620F1FBE7FC600AE065F /* CellVC.swift */,
-				484B62161FC01F1100AE065F /* CategoryVC.swift */,
 				4802982C1FC836D400A5DB3A /* PopUpBtnVC.swift */,
 			);
 			path = Controller;
@@ -297,6 +310,7 @@
 				48AD6F6F1FC561770054FBD5 /* Category.swift */,
 				484B62111FBEDD9700AE065F /* PopAnimator.swift */,
 				48AD6F631FC522DB0054FBD5 /* SoundPlayer.swift */,
+				4847833E207380A300C5A60F /* LocalService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -571,16 +585,24 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HangulTracing/Pods-HangulTracing-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer-11/iOS/RevealServer.framework",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-13/iOS/RevealServer.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,6 +626,7 @@
 				484979ED1FB6D7B0000C1E2A /* GameView.swift in Sources */,
 				48AD6F3F1FC3C06D0054FBD5 /* UICollectionViewCellExt.swift in Sources */,
 				484B620C1FBD7BDC00AE065F /* UIImageExt.swift in Sources */,
+				4847833F207380A300C5A60F /* LocalService.swift in Sources */,
 				484B620A1FBD729F00AE065F /* PlayerVC.swift in Sources */,
 				48AD6F701FC561770054FBD5 /* Category.swift in Sources */,
 				484B62101FBE7FC600AE065F /* CellVC.swift in Sources */,
@@ -619,7 +642,8 @@
 				487037911FAC3D6200A966A2 /* AppDelegate.swift in Sources */,
 				484979BD1FB194A6000C1E2A /* CGPointExt.swift in Sources */,
 				484B621D1FC1816600AE065F /* CategoryManager.swift in Sources */,
-				484B62171FC01F1100AE065F /* CategoryVC.swift in Sources */,
+				484783422073848400C5A60F /* CategoryViewModel.swift in Sources */,
+				484B62171FC01F1100AE065F /* CategoryViewController.swift in Sources */,
 				484979CF1FB31F66000C1E2A /* PinterestLayout.swift in Sources */,
 				484979CD1FB31DE3000C1E2A /* DataProvider.swift in Sources */,
 				4802982D1FC836D400A5DB3A /* PopUpBtnVC.swift in Sources */,

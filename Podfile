@@ -9,6 +9,10 @@ target 'HangulTracing' do
   pod 'SnapKit', '~> 4.0.0'
   pod 'RealmSwift'
   pod 'Reveal-SDK', configurations: ['Debug']
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxRealm'
+  pod 'Action'
 
   target 'HangulTracingTests' do
     inherit! :search_paths

@@ -11,7 +11,7 @@ import AVFoundation
 
 struct SoundPlayer {
   
-  var soundPlayer = AVAudioPlayer()
+  private var soundPlayer = AVAudioPlayer()
   
   mutating func playSoundEffect(name: String, extender: String) {
     do {

@@ -10,19 +10,19 @@ import UIKit
 import AVFoundation
 
 class LetterView: UIView {
-  private(set) var audioPlayer = SoundPlayer()
-  private(set) var letter: String!
-  private(set) var path: UIBezierPath!
-  private(set) var screenPointsSet: Set<CGPoint>!
-  private(set) var letterSet: Set<CGPoint>!
-  private(set) var drawSet = Set<CGPoint>()
-  private(set) var unionPath = UIBezierPath()
-  private(set) var speakerBtn: UIButton = {
+  private var audioPlayer = SoundPlayer()
+  private var letter: String!
+  private var path: UIBezierPath!
+  private var screenPointsSet: Set<CGPoint>!
+  private var letterSet: Set<CGPoint>!
+  private var drawSet = Set<CGPoint>()
+  private var unionPath = UIBezierPath()
+  private lazy var speakerBtn: UIButton = {
     let btn = UIButton()
     btn.setImage(UIImage(named: "speaker"), for: .normal)
     return btn
   }()
-  private(set) var speechSynthesizer = AVSpeechSynthesizer()
+  private var speechSynthesizer = AVSpeechSynthesizer()
   
   init(frame: CGRect, letter: String) {
     self.letter = letter

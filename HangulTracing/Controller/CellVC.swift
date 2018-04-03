@@ -9,27 +9,27 @@
 import UIKit
 
 class CellVC: UIViewController {
-  private(set) var viewFrame: CGRect!
-  private(set) weak var cardListVC: CardListVC?
-  private(set) var didSetupConstraints = false
-  private(set) var cardManager = CardManager.instance
-  private(set) var imgView: UIImageView = {
+  private var viewFrame: CGRect!
+  private weak var cardListVC: CardListVC?
+  private var didSetupConstraints = false
+  private var cardManager = CardManager.instance
+  lazy var imgView: UIImageView = {
     let imgView = UIImageView()
     imgView.contentMode = .scaleAspectFill
     imgView.layer.cornerRadius = 15
     imgView.clipsToBounds = true
     return imgView
   }()
-  private(set) var audioPlayer = SoundPlayer()
-  private(set) var backView: UIView = {
+  private var audioPlayer = SoundPlayer()
+  private lazy var backView: UIView = {
     let view = UIView()
     view.layer.cornerRadius = 15
     view.clipsToBounds = true
     view.backgroundColor = UIColor(hex: "FED230")
     return view
   }()
-  private(set) var isBackViewShowing = false
-  private(set) var wordLabel: UILabel = {
+  private var isBackViewShowing = false
+  private lazy var wordLabel: UILabel = {
     let label = UILabel()
     label.textAlignment = .center
     label.font = label.font.withSize(50)
@@ -39,7 +39,7 @@ class CellVC: UIViewController {
     label.textColor = UIColor(hex: "65418F")
     return label
   }()
-  private(set) var tracingBtn: UIButton = {
+  private lazy var tracingBtn: UIButton = {
     let btn = UIButton()
     btn.layer.cornerRadius = 15
     btn.setImage(UIImage(named: "tracing"), for: .normal)

@@ -25,22 +25,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HangulTracing/View/WordCardCell.swift"
-            timestampString = "533705692.524504"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "deleteBtnTapped()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "HangulTracing/Controller/CardListVC.swift"
             timestampString = "533823144.307731"
             startingColumnNumber = "9223372036854775807"
@@ -111,7 +95,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
             endingLineNumber = "72"
-            landmarkName = "deleteBtnTapped()"
+            landmarkName = "configCell(category:cellMode:action:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -281,54 +265,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HangulTracing/Model/CategoryDataProvider.swift"
-            timestampString = "533784937.970131"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "CategoryDataProvider"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HangulTracing.CategoryDataProvider.sectionInsets.getter : __C.UIEdgeInsets"
-                  moduleName = "HangulTracing"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/junwoo/dev/HangulTracing/HangulTracing/Model/CategoryDataProvider.swift"
-                  timestampString = "533712723.164244"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "132">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HangulTracing.CategoryDataProvider.init() -&gt; HangulTracing.CategoryDataProvider"
-                  moduleName = "HangulTracing"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/junwoo/dev/HangulTracing/HangulTracing/Model/CategoryDataProvider.swift"
-                  timestampString = "533712723.165769"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "488">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "HangulTracingTests/Controller/InputVCTests.swift"
             timestampString = "533825406.102196"
             startingColumnNumber = "9223372036854775807"
@@ -442,12 +378,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HangulTracing/Controller/CategoryVC.swift"
-            timestampString = "533822259.549802"
+            timestampString = "534133146.391625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
             endingLineNumber = "81"
-            landmarkName = "pushCardListVC(indexPath:)"
+            landmarkName = "bindViewModel()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

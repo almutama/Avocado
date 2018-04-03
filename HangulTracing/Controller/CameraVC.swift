@@ -11,31 +11,31 @@ import AVFoundation
 
 class CameraVC: UIViewController {
   
-  private(set) var didSetupConstraints = false
-  private(set) var spinner: UIActivityIndicatorView!
-  private(set) var captureSession: AVCaptureSession!
-  private(set) var cameraOutput: AVCapturePhotoOutput!
-  private(set) var previewLayer: AVCaptureVideoPreviewLayer!
-  private(set) var photoData: Data?
-  private(set) var cameraView: UIView = {
+  private var didSetupConstraints = false
+  private var spinner: UIActivityIndicatorView!
+  private var captureSession: AVCaptureSession!
+  private var cameraOutput: AVCapturePhotoOutput!
+  private var previewLayer: AVCaptureVideoPreviewLayer!
+  private var photoData: Data?
+  private lazy var cameraView: UIView = {
     let view = UIView()
     return view
   }()
-  private(set) var capturedImgView: UIImageView = {
+  private lazy var capturedImgView: UIImageView = {
     let imgView = UIImageView()
     imgView.backgroundColor = UIColor(hex: "1EC545")
     imgView.layer.cornerRadius = 15
     imgView.clipsToBounds = true
     return imgView
   }()
-  private(set) var saveBtn: UIButton = {
+  private lazy var saveBtn: UIButton = {
     let btn = UIButton()
     btn.backgroundColor = #colorLiteral(red: 0.9994240403, green: 0.3548831371, blue: 0.08110601978, alpha: 1)
     btn.setTitle("SAVE", for: .normal)
     btn.layer.cornerRadius = 15
     return btn
   }()
-  private(set) var exitBtn: UIButton = {
+  private lazy var exitBtn: UIButton = {
     let btn = UIButton()
     btn.setImage(UIImage(named: "delete"), for: .normal)
     return btn

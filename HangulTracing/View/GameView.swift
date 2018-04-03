@@ -10,8 +10,8 @@ import UIKit
 
 class GameView: UIView {
   
-  private(set) var words: String
-  private(set) var wordLabel: UILabel = {
+  private var words: String
+  private lazy var wordLabel: UILabel = {
     let label = UILabel()
     label.textAlignment = .center
     label.font = label.font.withSize(100)

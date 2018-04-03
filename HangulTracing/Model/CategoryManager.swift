@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class CategoryManager: NSObject {
-  var realm: Realm!
+  private var realm: Realm!
   var categories: Results<Category>!
   static let instance = CategoryManager()
   

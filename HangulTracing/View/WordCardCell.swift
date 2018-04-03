@@ -8,25 +8,15 @@
 
 import UIKit
 
-protocol DeleteBtnDelegate: class {
-  func deleteBtnTapped(sender: DeleteBtn)
-}
-
-extension DeleteBtnDelegate {
-  func deleteBtnTapped(sender: DeleteBtn) {}
-}
-
 class WordCardCell: UICollectionViewCell {
   
-  weak var deleteBtnDelegate: DeleteBtnDelegate?
-  
-  private(set) var imgView: UIImageView = {
+  lazy var imgView: UIImageView = {
     let imgView = UIImageView()
     imgView.contentMode = .scaleAspectFill
     return imgView
   }()
-  private(set) var deleteBtn: DeleteBtn = {
-    let btn = DeleteBtn()
+  private lazy var deleteBtn: UIButton = {
+    let btn = UIButton()
     btn.setImage(UIImage(named: "delete"), for: .normal)
     return btn
   }()
@@ -39,8 +29,6 @@ class WordCardCell: UICollectionViewCell {
     contentView.addSubview(imgView)
     contentView.addSubview(deleteBtn)
     deleteBtn.isHidden = true
-    deleteBtn.setParentCell(cell: self)
-    deleteBtn.addTarget(self, action: #selector(WordCardCell.deleteBtnTapped), for: .touchUpInside)
 
     imgView.snp.makeConstraints { (make) in
       make.edges.equalTo(contentView)
@@ -65,10 +53,6 @@ class WordCardCell: UICollectionViewCell {
       wiggle()
     }
     imgView.image = UIImage(data: card.imgData)
-  }
-  
-  @objc func deleteBtnTapped() {
-    self.deleteBtnDelegate?.deleteBtnTapped(sender: deleteBtn)
   }
 }
 

@@ -10,24 +10,24 @@ import UIKit
 
 class CardListVC: UIViewController {
   
-  private(set) var initialTouchPoint: CGPoint = CGPoint(x: 0,y: 0)
-  private(set) var didSetupConstraints = false
-  private(set) var selectedIndexPath: IndexPath?
-  private(set) var selectedCell: WordCardCell?
-  private(set) var spinner: UIActivityIndicatorView!
-  private(set) var cardManager = CardManager.instance
+  private var initialTouchPoint: CGPoint = CGPoint(x: 0,y: 0)
+  private var didSetupConstraints = false
+  private var selectedIndexPath: IndexPath?
+  var selectedCell: WordCardCell?
+  private var spinner: UIActivityIndicatorView!
+  private var cardManager = CardManager.instance
   private let transition = PopAnimator()
-  private(set) var cellMode: CellMode = .normal
-  private(set) var dataProvider: DataProvider = {
+  private var cellMode: CellMode = .normal
+  lazy var dataProvider: DataProvider = {
     let provider = DataProvider()
     return provider
   }()
   
-  private(set) var collectionView: UICollectionView = {
+  lazy var collectionView: UICollectionView = {
     let view = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: PinterestLayout())
     return view
   }()
-  private(set) var showBtn: UIButton = {
+  private lazy var showBtn: UIButton = {
     let btn = UIButton()
     btn.backgroundColor = UIColor.white
     btn.layer.cornerRadius = 35
@@ -166,32 +166,6 @@ class CardListVC: UIViewController {
     let tracingVC = TracingVC()
     tracingVC.setCardInfo(index: selectedIndexPath.item)
     navigationController?.pushViewController(tracingVC, animated: true)
-  }
-}
-
-extension CardListVC: DeleteBtnDelegate {
-  func deleteBtnTapped(sender: DeleteBtn) {
-    let alert = UIAlertController(title: "알림", message: "이 단어를 정말 삭제하시겠습니까?", preferredStyle: .alert)
-    let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { (action) in
-      if let cell = sender.parentCell as? WordCardCell {
-        if cell.superview == self.collectionView {
-          guard let indexPath = self.collectionView.indexPath(for: cell) else { return }
-          self.dataProvider.cardManager?.removeCardAt(index: indexPath.item)
-          self.dataProvider.cellMode = .normal
-          self.collectionView.reloadData()
-          let layout = PinterestLayout()
-          layout.delegate = self.self.dataProvider
-          self.collectionView.collectionViewLayout = layout
-        }
-      }
-    }
-    let cancelAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
-      self.dataProvider.cellMode = .normal
-      self.collectionView.reloadData()
-    }
-    alert.addAction(cancelAction)
-    alert.addAction(deleteAction)
-    present(alert, animated: true, completion: nil)
   }
 }
 

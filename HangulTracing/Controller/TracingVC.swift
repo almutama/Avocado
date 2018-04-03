@@ -10,14 +10,14 @@ import UIKit
 import AVFoundation
 
 class TracingVC: UIViewController {
-  private(set) var didSetupConstraints = false
-  private(set) var cardInfo: (CardManager, Int)?
-  private(set) var characters = [Character]()
-  private(set) var characterViews = [LetterView]()
-  private(set) var speechSynthesizer: AVSpeechSynthesizer!
-  private(set) var audioPlayer = SoundPlayer()
+  private var didSetupConstraints = false
+  private var cardInfo: (CardManager, Int)?
+  private var characters = [Character]()
+  private var characterViews = [LetterView]()
+  private var speechSynthesizer: AVSpeechSynthesizer!
+  private var audioPlayer = SoundPlayer()
   
-  private(set) var scrollView: UIScrollView = {
+  private lazy var scrollView: UIScrollView = {
     let scrollView = UIScrollView()
     scrollView.showsHorizontalScrollIndicator = false
     scrollView.showsVerticalScrollIndicator = false
