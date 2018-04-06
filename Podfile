@@ -13,6 +13,7 @@ target 'HangulTracing' do
   pod 'RxCocoa'
   pod 'RxRealm'
   pod 'Action'
+  pod 'RxGesture'
 
   target 'HangulTracingTests' do
     inherit! :search_paths

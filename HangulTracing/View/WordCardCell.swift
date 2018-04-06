@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import Action
 
 class WordCardCell: UICollectionViewCell {
   
+  static let reuseIdentifier = "WordCardCell"
   lazy var imgView: UIImageView = {
     let imgView = UIImageView()
     imgView.contentMode = .scaleAspectFill
@@ -23,7 +27,6 @@ class WordCardCell: UICollectionViewCell {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    
     contentView.layer.cornerRadius = 15
     contentView.clipsToBounds = true
     contentView.addSubview(imgView)
@@ -44,7 +47,8 @@ class WordCardCell: UICollectionViewCell {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func configCell(card: WordCard, cellMode: CellMode) {
+  func configCell(card: WordCard, cellMode: CellMode, action: CocoaAction) {
+    deleteBtn.rx.action = action
     
     if cellMode == .normal {
       deleteBtn.isHidden = true

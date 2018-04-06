@@ -11,6 +11,7 @@ import RealmSwift
 
 class Category: Object {
   @objc dynamic var title: String = ""
+  var cards = List<WordCard>()
   
   convenience init(category: String) {
     self.init()

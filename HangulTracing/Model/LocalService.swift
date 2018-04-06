@@ -22,39 +22,40 @@ class LocalService {
     return result ?? .empty()
   }
   
-  func addCategory(newCategory: Category) -> Observable<Category> {
+  func addCategory(newCategoryTitle: String) -> Observable<Category> {
     let result = withRealm("addCategory") { realm -> Observable<Category> in
-      let myPrimaryKey = newCategory.title
-      if realm.object(ofType: Category.self, forPrimaryKey: myPrimaryKey) == nil {
+      if let _ = realm.object(ofType: Category.self, forPrimaryKey: newCategoryTitle) {
+      } else {
+        let newCategory = Category(category: newCategoryTitle)
         try! realm.write {
           realm.add(newCategory)
         }
-        if let managedCategory = realm.object(ofType: Category.self, forPrimaryKey: myPrimaryKey) {
-          return .just(managedCategory)
-        }
+        return .just(newCategory)
       }
       return .empty()
     }
     return result ?? .empty()
   }
   
-  func categoryAt(index: Int) -> Observable<Category> {
+  func categoryAt(categoryTitle: String) -> Observable<Category> {
     let result = withRealm("categoryAt") { realm -> Observable<Category> in
-      let categories = realm.objects(Category.self)
-      return .just(categories[index])
+      if let category = realm.object(ofType: Category.self, forPrimaryKey: categoryTitle) {
+        return .just(category)
+      }
+      return .empty()
     }
     return result ?? .empty()
   }
   
-  func removeCategoryAt(index: Int) -> Completable {
+  func removeCategoryAt(categoryTitle: String) -> Completable {
     let result = withRealm("removeCategoryAt") { realm -> Completable in
       return Completable.create(subscribe: { completable -> Disposable in
-        let categories = realm.objects(Category.self)
-        let toDoCards = realm.objects(WordCard.self).filter("category = %@", categories[index].title)
-        try! realm.write {
-          realm.delete(categories[index])
-          realm.delete(toDoCards)
-          completable(.completed)
+        if let category = realm.object(ofType: Category.self, forPrimaryKey: categoryTitle) {
+          try! realm.write {
+            realm.delete(category)
+            realm.delete(category.cards)
+            completable(.completed)
+          }
         }
         return Disposables.create()
       })
@@ -77,44 +78,54 @@ class LocalService {
     return result ?? .empty()
   }
   
-//  func changeCategory(category: String) {
-//    let toDoCards = realm.objects(WordCard.self)
-//    toDoCards = realm.objects(WordCard.self).filter("category = %@", category)
-//    self.title = category
-//  }
+  func cards(category: Category) -> Observable<[WordCard]> {
+    let result = withRealm("cards") { realm -> Observable<[WordCard]> in
+      if let category = realm.object(ofType: Category.self, forPrimaryKey: category.title) {
+        let cards = category.cards.toArray()
+        return .just(cards)
+      }
+      return .empty()
+    }
+    return result ?? .empty()
+  }
   
-  func addCard(newCard: WordCard) -> Observable<WordCard> {
+  func addCard(newCard: WordCard, category: Category) -> Observable<WordCard> {
     let result = withRealm("categoryAt") { realm -> Observable<WordCard> in
-      let myPrimaryKey = newCard.word
-      if realm.object(ofType: WordCard.self, forPrimaryKey: myPrimaryKey) == nil {
+      if let category = realm.object(ofType: Category.self, forPrimaryKey: category.title) {
         try! realm.write {
-          realm.add(newCard)
+          category.cards.append(newCard)
         }
-        if let managedCard = realm.object(ofType: WordCard.self, forPrimaryKey: newCard.word) {
-          return .just(managedCard)
+        if let card = realm.object(ofType: WordCard.self, forPrimaryKey: newCard.word) {
+          return .just(card)
         }
       }
       return .empty()
     }
     return result ?? .empty()
-    
   }
   
-  func cardAt(index: Int) -> Observable<WordCard> {
+  func cardAt(cardWord: String, categoryTitle: String) -> Observable<WordCard> {
     let result = withRealm("categoryAt") { realm -> Observable<WordCard> in
-      let toDoCards = realm.objects(WordCard.self)
-      return .just(toDoCards[index])
+      if let category = realm.object(ofType: Category.self, forPrimaryKey: categoryTitle) {
+        if let card = category.cards.filter("title = '\(cardWord)'").first {
+          return .just(card)
+        }
+      }
+      return .empty()
     }
     return result ?? .empty()
   }
   
-  func removeCardAt(index: Int) -> Completable {
+  func removeCardAt(cardWord: String, categoryTitle: String) -> Completable {
     let result = withRealm("removeCardAt") { realm -> Completable in
       return Completable.create(subscribe: { completable -> Disposable in
-        let toDoCards = realm.objects(WordCard.self)
-        try! realm.write {
-          realm.delete(toDoCards[index])
-          completable(.completed)
+        if let category = realm.object(ofType: Category.self, forPrimaryKey: categoryTitle) {
+          if let card = category.cards.filter("word = '\(cardWord)'").first {
+            try! realm.write {
+              realm.delete(card)
+              completable(.completed)
+            }
+          }
         }
         return Disposables.create()
       })
@@ -135,22 +146,55 @@ class LocalService {
     }
     return result ?? .empty()
   }
-  
-  func canPaging(page: Int) -> Bool {
-    let realm = try! Realm()
-    let toDoCards = realm.objects(WordCard.self)
-    return page < toDoCards.count - 1
-  }
 }
 
 extension LocalService {
   fileprivate func withRealm<T>(_ operation: String, action: (Realm) throws -> T) -> T? {
     do {
-      let realm = try Realm()
+      let realm = try Realm(configuration: RealmConfig.main.configuration)
       return try action(realm)
     } catch let err {
       print("Failed \(operation) realm with error: \(err)")
       return nil
+    }
+  }
+  
+  func defaultCategory(realm: Realm, title: String) -> Category {
+    if let category = realm.object(ofType: Category.self, forPrimaryKey: title) {
+      return category
+    }
+    let newCategory = Category(category: title)
+    realm.add(newCategory)
+    return realm.object(ofType: Category.self, forPrimaryKey: title)!
+  }
+  
+  func defaultCard(realm: Realm, word: String, imgData: Data) -> WordCard {
+    if let card = realm.object(ofType: WordCard.self, forPrimaryKey: word) {
+      return card
+    }
+    let newCard = WordCard(word: word, imageData: imgData)
+    realm.add(newCard)
+    return realm.object(ofType: WordCard.self, forPrimaryKey: word)!
+  }
+  
+  static func migrate(_ migration: Migration, fileSchemaVersion: UInt64) {
+    
+  }
+  
+  static func copyInitialData(_ from: URL, to: URL) {
+    let copy = {
+      _ = try? FileManager.default.removeItem(at: to)
+      try! FileManager.default.copyItem(at: from, to: to)
+    }
+    let exists: Bool
+    do {
+      exists = try to.checkPromisedItemIsReachable()
+    } catch {
+      copy()
+      return
+    }
+    if !exists {
+      copy()
     }
   }
 }

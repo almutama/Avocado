@@ -11,6 +11,11 @@ import RxSwift
 import RxCocoa
 import Action
 
+enum CellMode: Int {
+  case normal
+  case delete
+}
+
 class CategoryCell: UICollectionViewCell {
   static let reuseIdentifier = "CategoryCell"
   private lazy var titleLabel: UILabel = {

@@ -16,12 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
-    window = UIWindow(frame: UIScreen.main.bounds)
-    let categoryVC = CategoryViewController()
-    let categoryViewModel = CategoryViewModel()
-    categoryVC.viewModel = categoryViewModel
-    window?.rootViewController = UINavigationController(rootViewController: categoryVC)
-    window?.makeKeyAndVisible()
+    let sceneCoordinator = SceneCoordinator()
+    self.window = sceneCoordinator.window
+    let localService = LocalService()
+    var audioPlayer = SoundPlayer()
+    let categoryViewModel = CategoryViewModel(localService: localService,
+                                              sceneCoordinator: sceneCoordinator,
+                                              audioPlayer: audioPlayer)
+    let categoryScene = Scene.category(categoryViewModel)
+    sceneCoordinator.transition(to: categoryScene, type: .root)
     
     let navigationBarAppearace = UINavigationBar.appearance()
     navigationBarAppearace.tintColor = UIColor.white

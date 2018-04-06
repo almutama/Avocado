@@ -8,8 +8,12 @@
 
 import UIKit
 import AVFoundation
+import RxSwift
+import RxCocoa
 
 class LetterView: UIView {
+  var completeSubject = PublishSubject<Bool>()
+  private let bag = DisposeBag()
   private var audioPlayer = SoundPlayer()
   private var letter: String!
   private var path: UIBezierPath!
@@ -29,7 +33,13 @@ class LetterView: UIView {
     super.init(frame: frame)
     
     setupView()
-    speakerBtn.addTarget(self, action: #selector(LetterView.speakerTapped(_:)), for: .touchUpInside)
+    speakerBtn.rx.tap
+      .throttle(0.5, scheduler: MainScheduler.instance)
+      .subscribe(onNext: { [unowned self] _ in
+        self.synthesizeSpeech(fromString: letter)
+      })
+      .disposed(by: bag)
+    
     screenPointsSet = getScreenPointsSet()
   }
   
@@ -115,10 +125,6 @@ class LetterView: UIView {
     }
   }
   
-  @objc func speakerTapped(_ sender: UIButton) {
-    synthesizeSpeech(fromString: letter)
-  }
-  
   func synthesizeSpeech(fromString string:String) {
     let speechUtterence = AVSpeechUtterance(string: string)
     speechSynthesizer.speak(speechUtterence)
@@ -136,10 +142,9 @@ class LetterView: UIView {
   
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     audioPlayer.playSoundEffect(name: "chalk", extender: "mp3")
-    
     drawSet = getContainingPoints(tempSet: letterSet, path: unionPath)
     if drawSet.count * 100 / letterSet.count >= 90 {
-      NotificationCenter.default.post(name: Constants().NOTI_DRAW_COMPLETED, object: nil)
+      self.completeSubject.onNext(true)
     }
   }
   

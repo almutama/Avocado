@@ -13,13 +13,12 @@ class WordCard: Object {
   
   @objc dynamic var word: String = ""
   @objc dynamic var imgData = Data()
-  @objc dynamic var category: String!
+  var category = LinkingObjects(fromType: Category.self, property: "cards")
   
-  convenience init(word: String, imageData: Data, category: String) {
+  convenience init(word: String, imageData: Data) {
     self.init()
     self.word = word
     self.imgData = imageData
-    self.category = category
   }
   
   override static func primaryKey() -> String? {
