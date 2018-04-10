@@ -141,7 +141,7 @@
 		487037971FAC3D6200A966A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4870379A1FAC3D6200A966A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4870379C1FAC3D6200A966A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		487037A11FAC3D6300A966A2 /* HangulTracingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HangulTracingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		487037A11FAC3D6300A966A2 /* AvocadoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvocadoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		487037A71FAC3D6300A966A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48770E3A1FC6B3B70057159A /* CategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTests.swift; sourceTree = "<group>"; };
 		488E6A671FCC06F90065F527 /* chalk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chalk.mp3; sourceTree = "<group>"; };
@@ -319,7 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				4870378D1FAC3D6200A966A2 /* HangulTracing.app */,
-				487037A11FAC3D6300A966A2 /* HangulTracingTests.xctest */,
+				487037A11FAC3D6300A966A2 /* AvocadoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -456,9 +456,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4870378C1FAC3D6200A966A2 /* HangulTracing */ = {
+		4870378C1FAC3D6200A966A2 /* Avocado */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 487037AA1FAC3D6300A966A2 /* Build configuration list for PBXNativeTarget "HangulTracing" */;
+			buildConfigurationList = 487037AA1FAC3D6300A966A2 /* Build configuration list for PBXNativeTarget "Avocado" */;
 			buildPhases = (
 				9244067772467347866974F0 /* [CP] Check Pods Manifest.lock */,
 				487037891FAC3D6200A966A2 /* Sources */,
@@ -471,14 +471,14 @@
 			);
 			dependencies = (
 			);
-			name = HangulTracing;
+			name = Avocado;
 			productName = HangulTracing;
 			productReference = 4870378D1FAC3D6200A966A2 /* HangulTracing.app */;
 			productType = "com.apple.product-type.application";
 		};
-		487037A01FAC3D6200A966A2 /* HangulTracingTests */ = {
+		487037A01FAC3D6200A966A2 /* AvocadoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 487037AD1FAC3D6300A966A2 /* Build configuration list for PBXNativeTarget "HangulTracingTests" */;
+			buildConfigurationList = 487037AD1FAC3D6300A966A2 /* Build configuration list for PBXNativeTarget "AvocadoTests" */;
 			buildPhases = (
 				6C82F06F7E79FCE1C99F07AE /* [CP] Check Pods Manifest.lock */,
 				4870379D1FAC3D6200A966A2 /* Sources */,
@@ -492,9 +492,9 @@
 			dependencies = (
 				487037A31FAC3D6300A966A2 /* PBXTargetDependency */,
 			);
-			name = HangulTracingTests;
+			name = AvocadoTests;
 			productName = HangulTracingTests;
-			productReference = 487037A11FAC3D6300A966A2 /* HangulTracingTests.xctest */;
+			productReference = 487037A11FAC3D6300A966A2 /* AvocadoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -519,7 +519,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 487037881FAC3D6200A966A2 /* Build configuration list for PBXProject "HangulTracing" */;
+			buildConfigurationList = 487037881FAC3D6200A966A2 /* Build configuration list for PBXProject "Avocado" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -532,8 +532,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4870378C1FAC3D6200A966A2 /* HangulTracing */,
-				487037A01FAC3D6200A966A2 /* HangulTracingTests */,
+				4870378C1FAC3D6200A966A2 /* Avocado */,
+				487037A01FAC3D6200A966A2 /* AvocadoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -762,7 +762,7 @@
 /* Begin PBXTargetDependency section */
 		487037A31FAC3D6300A966A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4870378C1FAC3D6200A966A2 /* HangulTracing */;
+			target = 4870378C1FAC3D6200A966A2 /* Avocado */;
 			targetProxy = 487037A21FAC3D6300A966A2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -934,7 +934,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HangulTracing.app/HangulTracing";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Avocado.app/Avocado";
 			};
 			name = Debug;
 		};
@@ -953,14 +953,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HangulTracing.app/HangulTracing";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Avocado.app/Avocado";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		487037881FAC3D6200A966A2 /* Build configuration list for PBXProject "HangulTracing" */ = {
+		487037881FAC3D6200A966A2 /* Build configuration list for PBXProject "Avocado" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				487037A81FAC3D6300A966A2 /* Debug */,
@@ -969,7 +969,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		487037AA1FAC3D6300A966A2 /* Build configuration list for PBXNativeTarget "HangulTracing" */ = {
+		487037AA1FAC3D6300A966A2 /* Build configuration list for PBXNativeTarget "Avocado" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				487037AB1FAC3D6300A966A2 /* Debug */,
@@ -978,7 +978,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		487037AD1FAC3D6300A966A2 /* Build configuration list for PBXNativeTarget "HangulTracingTests" */ = {
+		487037AD1FAC3D6300A966A2 /* Build configuration list for PBXNativeTarget "AvocadoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				487037AE1FAC3D6300A966A2 /* Debug */,
