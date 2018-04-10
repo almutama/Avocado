@@ -29,7 +29,6 @@ class PopCardViewController: UIViewController, BindableType {
     view.isHidden = true
     return view
   }()
-  private var isBackViewShowing = false
   private lazy var wordLabel: UILabel = {
     let label = UILabel()
     label.isUserInteractionEnabled = true
@@ -78,7 +77,7 @@ class PopCardViewController: UIViewController, BindableType {
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    flip { (success) in
+    flip(toImageView: false) { (success) in
     }
   }
   
@@ -106,7 +105,7 @@ class PopCardViewController: UIViewController, BindableType {
     deleteBtn.rx.tap
       .throttle(0.5, scheduler: MainScheduler.instance)
       .subscribe(onNext: { [unowned self] _ in
-        self.flip(completion: { bool in
+        self.flip(toImageView: true, completion: { bool in
           if bool {
             self.viewModel.dismissView()
           }
@@ -115,9 +114,8 @@ class PopCardViewController: UIViewController, BindableType {
       .disposed(by: bag)
   }
   
-  func flip(completion: @escaping (_ Success: Bool) -> ()) {
-    if isBackViewShowing {
-      
+  func flip(toImageView: Bool, completion: @escaping (_ Success: Bool) -> ()) {
+    if toImageView {
       UIView.transition(from: backView,
                         to: imgView,
                         duration: 1.0,
@@ -136,7 +134,6 @@ class PopCardViewController: UIViewController, BindableType {
                           completion(true)
       })
     }
-    isBackViewShowing = !isBackViewShowing
   }
   
   func animateTracingBtn() {

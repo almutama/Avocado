@@ -892,10 +892,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J6JJA4UC5Z;
+				DEVELOPMENT_TEAM = CA736F4E8H;
 				INFOPLIST_FILE = HangulTracing/Asset/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.samchon.HangulTracing;
+				PRODUCT_BUNDLE_IDENTIFIER = Avocado;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -908,10 +908,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J6JJA4UC5Z;
+				DEVELOPMENT_TEAM = CA736F4E8H;
 				INFOPLIST_FILE = HangulTracing/Asset/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.samchon.HangulTracing;
+				PRODUCT_BUNDLE_IDENTIFIER = Avocado;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
