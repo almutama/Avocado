@@ -47,6 +47,11 @@ class PopCardViewController: UIViewController, BindableType {
     btn.setImage(UIImage(named: "tracing"), for: .normal)
     return btn
   }()
+  private lazy var deleteBtn: UIButton = {
+    let btn = UIButton()
+    btn.setImage(UIImage(named: "delete"), for: .normal)
+    return btn
+  }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -55,6 +60,7 @@ class PopCardViewController: UIViewController, BindableType {
     view.addSubview(backView)
     backView.addSubview(wordLabel)
     backView.addSubview(tracingBtn)
+    backView.addSubview(deleteBtn)
     
     imgView.frame = viewFrame
     backView.frame = viewFrame
@@ -65,14 +71,13 @@ class PopCardViewController: UIViewController, BindableType {
       make.top.right.equalTo(backView)
       make.width.height.equalTo(50)
     }
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    flip { (success) in
+    deleteBtn.snp.makeConstraints { (make) in
+      make.top.left.equalTo(backView)
+      make.width.height.equalTo(50)
     }
   }
   
-  override func viewWillDisappear(_ animated: Bool) {
+  override func viewDidAppear(_ animated: Bool) {
     flip { (success) in
     }
   }
@@ -98,11 +103,14 @@ class PopCardViewController: UIViewController, BindableType {
       })
       .disposed(by: bag)
     
-    wordLabel.rx.tapGesture()
-      .skip(1)
+    deleteBtn.rx.tap
       .throttle(0.5, scheduler: MainScheduler.instance)
       .subscribe(onNext: { [unowned self] _ in
-        self.viewModel.popView()
+        self.flip(completion: { bool in
+          if bool {
+            self.viewModel.dismissView()
+          }
+        })
       })
       .disposed(by: bag)
   }

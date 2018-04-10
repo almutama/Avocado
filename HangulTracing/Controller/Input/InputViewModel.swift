@@ -25,12 +25,12 @@ struct InputViewModel {
     self.selectedCategory = selectedCategory
   }
   
-  func onAddCard() -> Action<(String, Data), Void> {
+  lazy var onAddCard: Action<(String, Data), Void> = { this in
     return Action { tuple in
       let newCard = WordCard(word: tuple.0, imageData: tuple.1)
-      return self.localService.addCard(newCard: newCard, category: self.selectedCategory).map{ _ in }
+      return this.localService.addCard(newCard: newCard, category: this.selectedCategory).map{ _ in }
     }
-  }
+  }(self)
   
   func dismissView() {
     sceneCoordinator.pop()

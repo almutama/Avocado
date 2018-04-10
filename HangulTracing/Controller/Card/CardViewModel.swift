@@ -30,6 +30,9 @@ struct CardViewModel: ViewModelType {
   
   func cards() -> Observable<[WordCard]> {
     return localService.cards(category: selectedCategory)
+      .map({ result -> [WordCard] in
+        return result.toArray()
+      })
   }
   
   func dismissCardView() {
@@ -60,11 +63,11 @@ struct CardViewModel: ViewModelType {
     return localService.removeCardAt(cardWord: word, categoryTitle: selectedCategory.title)
   }
   
-  func onDelete(card: WordCard, collectionView: UICollectionView) -> CocoaAction {
-    return CocoaAction {
-      return self.localService.removeCardAt(cardWord: card.word, categoryTitle: self.selectedCategory.title)
-        .asObservable().map{ _ in collectionView.reloadData() }
+  func changeCellMode(toNormal: Bool) {
+    if toNormal {
+      cellMode.accept(.normal)
+    } else {
+      cellMode.accept(.delete)
     }
   }
-  
 }

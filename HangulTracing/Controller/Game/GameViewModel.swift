@@ -29,6 +29,9 @@ struct GameViewModel {
   
   func bindOutput() {
     localService.cards(category: selectedCategory)
+      .map({ result -> [WordCard] in
+        return result.toArray()
+      })
       .bind(to: cardsSubject)
       .disposed(by: bag)
   }

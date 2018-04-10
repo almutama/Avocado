@@ -55,10 +55,17 @@ class TracingViewController: UIViewController, BindableType {
     view.addSubview(scrollView)
     
     topView.snp.makeConstraints { (make) in
-      make.left.equalTo(view.safeAreaLayoutGuide.snp.left)
-      make.right.equalTo(view.safeAreaLayoutGuide.snp.right)
-      make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
       make.height.equalTo(44)
+      if #available(iOS 11.0, *) {
+        make.left.equalTo(view.safeAreaLayoutGuide.snp.left)
+        make.right.equalTo(view.safeAreaLayoutGuide.snp.right)
+        make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+      } else {
+        make.left.equalTo(view)
+        make.right.equalTo(view)
+        make.top.equalTo(view)
+      }
+      
     }
     backButton.snp.makeConstraints { (make) in
       backButton.sizeToFit()
@@ -71,9 +78,15 @@ class TracingViewController: UIViewController, BindableType {
     }
     scrollView.snp.makeConstraints({ (make) in
       make.top.equalTo(topView.snp.bottom)
-      make.left.equalTo(view.safeAreaLayoutGuide.snp.left)
-      make.right.equalTo(view.safeAreaLayoutGuide.snp.right)
-      make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+      if #available(iOS 11.0, *) {
+        make.left.equalTo(view.safeAreaLayoutGuide.snp.left)
+        make.right.equalTo(view.safeAreaLayoutGuide.snp.right)
+        make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+      } else {
+        make.left.equalTo(view)
+        make.right.equalTo(view)
+        make.bottom.equalTo(view)
+      }
     })
     
     scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width * CGFloat(characters.count), height: UIScreen.main.bounds.height - 44.0)
@@ -83,7 +96,7 @@ class TracingViewController: UIViewController, BindableType {
     backButton.rx.tap
       .throttle(0.5, scheduler: MainScheduler.instance)
       .subscribe(onNext: { [unowned self] _ in
-        self.viewModel.popView()
+        self.viewModel.dismissView()
       })
       .disposed(by: bag)
   }

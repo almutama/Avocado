@@ -30,12 +30,23 @@ class CardViewController: UIViewController, BindableType {
     btn.setImage(UIImage(named: "showBtn"), for: .normal)
     return btn
   }()
+  private lazy var indicateLabel: UILabel = {
+    let label = UILabel()
+    label.text = "Swipe down to exit"
+    label.textColor = UIColor.lightGray
+    return label
+  }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    setupView()
+  }
+  
+  func setupView() {
     view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     view.addSubview(collectionView)
     view.addSubview(showBtn)
+    view.addSubview(indicateLabel)
     if let layout = collectionView.collectionViewLayout as? PinterestLayout {
       layout.delegate = self
     }
@@ -44,17 +55,35 @@ class CardViewController: UIViewController, BindableType {
     }
     
     collectionView.snp.makeConstraints { make in
-      make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-      make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-      make.left.equalTo(view.safeAreaLayoutGuide.snp.left)
-      make.right.equalTo(view.safeAreaLayoutGuide.snp.right)
+      if #available(iOS 11.0, *) {
+        make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+        make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        make.left.equalTo(view.safeAreaLayoutGuide.snp.left)
+        make.right.equalTo(view.safeAreaLayoutGuide.snp.right)
+      } else {
+        make.edges.equalTo(view)
+      }
     }
     collectionView.contentInset = UIEdgeInsets(top: 23, left: 10, bottom: 10, right: 10)
     showBtn.snp.makeConstraints({ (make) in
       make.width.height.equalTo(70)
-      make.right.equalTo(view.safeAreaLayoutGuide.snp.right).offset(-20)
-      make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
+      if #available(iOS 11.0, *) {
+        make.right.equalTo(view.safeAreaLayoutGuide.snp.right).offset(-20)
+        make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
+      } else {
+        make.right.equalTo(view).offset(-20)
+        make.bottom.equalTo(view).offset(-20)
+      }
     })
+    indicateLabel.snp.makeConstraints { (make) in
+      indicateLabel.sizeToFit()
+      make.centerX.equalTo(view)
+      if #available(iOS 11.0, *) {
+        make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+      } else {
+        make.top.equalTo(view)
+      }
+    }
   }
   
   func bindViewModel() {
@@ -67,7 +96,7 @@ class CardViewController: UIViewController, BindableType {
                                                          for: IndexPath(item: index, section: 0)) as? WordCardCell {
           cell.configCell(card: item,
                           cellMode: self.viewModel.cellMode.value,
-                          action: self.viewModel.onDelete(card: item, collectionView: collectionView))
+                          action: self.onDelete(cardWord: item.word))
           return cell
         }
         return WordCardCell()
@@ -83,6 +112,7 @@ class CardViewController: UIViewController, BindableType {
     showBtn.rx.tap
       .throttle(0.5, scheduler: MainScheduler.instance)
       .subscribe(onNext: { [unowned self] _ in
+        self.viewModel.changeCellMode(toNormal: true)
         self.viewModel.goToPopUpScene()
       })
       .disposed(by: bag)
@@ -111,23 +141,29 @@ class CardViewController: UIViewController, BindableType {
       .disposed(by: bag)
   }
   
-//  func onDelete(card: WordCard) -> CocoaAction {
-//    return CocoaAction {
-//      let alert = UIAlertController(title: "알림", message: "해당 카테고리의 단어들이 모두 삭제됩니다. 정말 삭제하시겠습니까?", preferredStyle: .alert)
-//      let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { (action) in
-//        self.viewModel.removeCardAt(word: card.word)
-//          .subscribe()
-//          .disposed(by: self.bag)
-//      }
-//      let cancelAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
-//        self.viewModel.cellMode.accept(.normal)
-//      }
-//      alert.addAction(cancelAction)
-//      alert.addAction(deleteAction)
-//      self.present(alert, animated: true, completion: nil)
-//      return Observable.empty()
-//    }
-//  }
+  func onDelete(cardWord: String) -> CocoaAction {
+    return CocoaAction {
+      return Observable<()>.create { [unowned self] observer in
+        let alertVC = UIAlertController(title: "알림", message: "해당 카드가 삭제됩니다. 정말 삭제하시겠습니까?", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+          self.viewModel.removeCardAt(word: cardWord)
+            .subscribe(onCompleted: {
+              self.viewModel.changeCellMode(toNormal: true)
+              observer.onCompleted()
+            })
+            .disposed(by: self.bag)
+        }))
+        alertVC.addAction(UIAlertAction(title: "Cancel", style: .default, handler: {_ in
+          self.viewModel.changeCellMode(toNormal: true)
+          observer.onCompleted()
+        }))
+        self.present(alertVC, animated: true, completion: nil)
+        return Disposables.create {
+          self.dismiss(animated: true, completion: nil)
+        }
+      }
+    }
+  }
   
   func swipeView(recognizer: UIPanGestureRecognizer) {
     if collectionView.contentOffset.y <= -collectionView.contentInset.top {

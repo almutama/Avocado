@@ -56,13 +56,6 @@ class GameViewController: UIViewController, orientationIsOnlyLandScapeRight, Bin
   private lazy var motionManager: CMMotionManager = {
     let motionManager = CMMotionManager()
     motionManager.deviceMotionUpdateInterval = 1.0 / 60
-    if motionManager.isDeviceMotionAvailable {
-      motionManager.startDeviceMotionUpdates(to: .main, withHandler: { (motion, error) in
-        if error == nil {
-          self.handleDeviceMotionUpdate(deviceMotion: motion!)
-        }
-      })
-    }
     return motionManager
   }()
   private lazy var scrollView: UIScrollView = {
@@ -88,6 +81,13 @@ class GameViewController: UIViewController, orientationIsOnlyLandScapeRight, Bin
     requestAVAuth()
     sessionQueue.async {
       self.configureSession()
+    }
+    if motionManager.isDeviceMotionAvailable {
+      motionManager.startDeviceMotionUpdates(to: .main, withHandler: { (motion, error) in
+        if error == nil {
+          self.handleDeviceMotionUpdate(deviceMotion: motion!)
+        }
+      })
     }
     setupView()
   }
@@ -448,7 +448,6 @@ extension GameViewController: AVCaptureFileOutputRecordingDelegate {
     } else {
       cleanUp()
     }
-    
   }
   
   func playVideo() {

@@ -54,10 +54,15 @@ struct CategoryViewModel: ViewModelType {
     sceneCoordinator.transition(to: cardScene, type: .push)
   }
   
-  func onDelete(categoryTitle: String) -> CocoaAction {
-    return CocoaAction {
-      return self.localService.removeCategoryAt(categoryTitle: categoryTitle)
-        .asObservable().map{ _ in }
+  func changeCellMode(toNormal: Bool) {
+    if toNormal {
+      cellMode.accept(.normal)
+    } else {
+      cellMode.accept(.delete)
     }
+  }
+  
+  func isNormalMode() -> Bool {
+    return cellMode.value == .normal
   }
 }

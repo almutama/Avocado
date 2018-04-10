@@ -24,11 +24,11 @@ struct PopUpViewModel {
     self.sceneCoordinator = sceneCoordinator
   }
   
-  func onAddNewCategory() -> Action<Category, Void> {
-    return Action { category in
-      return self.localService.addCategory(newCategoryTitle: category.title).map{ _ in }
+  lazy var onAddNewCategory: Action<String, Void> = { this in
+    return Action { categoryTitle in
+      return this.localService.addCategory(newCategoryTitle: categoryTitle).map{ _ in }
     }
-  }
+  }(self)
 
   func dismissPopUpView() {
     sceneCoordinator.pop()

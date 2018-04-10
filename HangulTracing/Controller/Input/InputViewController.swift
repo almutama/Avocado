@@ -98,6 +98,7 @@ class InputViewController: UIViewController, BindableType {
       make.left.equalTo(self.view).offset(50)
     })
     libraryBtn.snp.makeConstraints({ (make) in
+      make.width.height.equalTo(50)
       make.centerY.equalTo(cameraBtn)
       make.left.equalTo(cameraBtn.snp.right).offset(8)
     })
@@ -131,7 +132,7 @@ class InputViewController: UIViewController, BindableType {
       })
       .disposed(by: bag)
     
-    viewModel.onAddCard().executionObservables
+    viewModel.onAddCard.executionObservables
       .take(1)
       .subscribe(onNext: { [unowned self] _ in
         self.viewModel.dismissView()
@@ -146,7 +147,7 @@ class InputViewController: UIViewController, BindableType {
       .map { [unowned self] _ -> (String, Data) in
         return (self.wordTextField.text!, self.capturedPhotoData!)
       }
-      .bind(to: viewModel.onAddCard().inputs)
+      .bind(to: viewModel.onAddCard.inputs)
       .disposed(by: bag)
     
     cameraBtn.rx.tap

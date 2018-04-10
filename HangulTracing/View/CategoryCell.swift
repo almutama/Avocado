@@ -64,7 +64,6 @@ class CategoryCell: UICollectionViewCell {
       deleteBtn.isHidden = true
     } else {
       deleteBtn.isHidden = false
-      wiggle()
     }
     titleLabel.text = category.title
   }

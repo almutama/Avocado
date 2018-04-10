@@ -54,7 +54,6 @@ class WordCardCell: UICollectionViewCell {
       deleteBtn.isHidden = true
     } else {
       deleteBtn.isHidden = false
-      wiggle()
     }
     imgView.image = UIImage(data: card.imgData)
   }

@@ -29,7 +29,7 @@ struct PopCardViewModel {
     sceneCoordinator.transition(to: tracingScene, type: .push)
   }
   
-  func popView() {
+  func dismissView() {
     sceneCoordinator.pop()
   }
 }

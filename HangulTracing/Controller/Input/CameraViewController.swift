@@ -87,6 +87,7 @@ class CameraViewController: UIViewController, BindableType {
       .disposed(by: bag)
     
     cameraView.rx.tapGesture()
+      .skip(1)
       .throttle(0.5, scheduler: MainScheduler.instance)
       .filter{ [unowned self] recong in recong.numberOfTapsRequired == 1 }
       .subscribe(onNext: { [unowned self] _ in
@@ -136,6 +137,7 @@ class CameraViewController: UIViewController, BindableType {
 }
 
 extension CameraViewController: AVCapturePhotoCaptureDelegate {
+  
   func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
     if let error = error {
       debugPrint(error)

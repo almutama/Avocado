@@ -15,6 +15,7 @@ import RxRealm
 class LocalService {
   
   func categories() -> Observable<Results<Category>> {
+    print("------realmfile-------", RealmConfig.main.configuration.fileURL)
     let result = withRealm("categories") { realm -> Observable<Results<Category>> in
       let categories = realm.objects(Category.self)
       return Observable.collection(from: categories)
@@ -53,7 +54,6 @@ class LocalService {
         if let category = realm.object(ofType: Category.self, forPrimaryKey: categoryTitle) {
           try! realm.write {
             realm.delete(category)
-            realm.delete(category.cards)
             completable(.completed)
           }
         }
@@ -78,11 +78,11 @@ class LocalService {
     return result ?? .empty()
   }
   
-  func cards(category: Category) -> Observable<[WordCard]> {
-    let result = withRealm("cards") { realm -> Observable<[WordCard]> in
+  func cards(category: Category) -> Observable<Results<WordCard>> {
+    let result = withRealm("cards") { realm -> Observable<Results<WordCard>> in
       if let category = realm.object(ofType: Category.self, forPrimaryKey: category.title) {
-        let cards = category.cards.toArray()
-        return .just(cards)
+        let cards = category.cards.filter("word != ''")
+        return Observable.collection(from: cards)
       }
       return .empty()
     }

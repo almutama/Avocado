@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxGesture
+import Action
 
 class PopUpViewController: UIViewController, BindableType {
   var viewModel: PopUpViewModel!
@@ -26,6 +27,7 @@ class PopUpViewController: UIViewController, BindableType {
     btn.backgroundColor = UIColor(hex: "5F9EF2")
     btn.layer.cornerRadius = 25
     btn.setImage(UIImage(named: "trash"), for: .normal)
+    btn.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     return btn
   }()
   private lazy var deleteCardLabel: UILabel = {
@@ -45,6 +47,7 @@ class PopUpViewController: UIViewController, BindableType {
     btn.backgroundColor = UIColor(hex: "5F9EF2")
     btn.layer.cornerRadius = 25
     btn.setImage(UIImage(named: "addCard"), for: .normal)
+    btn.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     return btn
   }()
   private lazy var addCardLabel: UILabel = {
@@ -64,6 +67,7 @@ class PopUpViewController: UIViewController, BindableType {
     btn.backgroundColor = UIColor(hex: "5F9EF2")
     btn.layer.cornerRadius = 25
     btn.setImage(UIImage(named: "game"), for: .normal)
+    btn.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     return btn
   }()
   private lazy var gameLabel: UILabel = {
@@ -118,6 +122,10 @@ class PopUpViewController: UIViewController, BindableType {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    setupView()
+  }
+  
+  func setupView() {
     view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
     view.addSubview(addCardBtn)
     view.addSubview(deleteCardBtn)
@@ -133,8 +141,13 @@ class PopUpViewController: UIViewController, BindableType {
     
     hideBtn.snp.makeConstraints({ (make) in
       make.width.height.equalTo(70)
-      make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
-      make.right.equalTo(view.safeAreaLayoutGuide.snp.right).offset(-20)
+      if #available(iOS 11.0, *) {
+        make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
+        make.right.equalTo(view.safeAreaLayoutGuide.snp.right).offset(-20)
+      } else {
+        make.bottom.equalTo(view).offset(-20)
+        make.right.equalTo(view).offset(-20)
+      }
     })
     
     addCardBtn.snp.makeConstraints({ (make) in
@@ -203,17 +216,18 @@ class PopUpViewController: UIViewController, BindableType {
   }
   
   func bindViewModel() {
-//    view.rx.tapGesture()
-//      .skip(1)
-//      .throttle(0.5, scheduler: MainScheduler.instance)
-//      .flatMap { [unowned self] _ -> Observable<Bool> in
-//        return self.animateBtn(willShow: false)
-//      }.subscribe(onNext: { [unowned self] bool in
-//        if bool {
-//          self.viewModel.dismissPopUpView()
-//        }
-//      })
-//      .disposed(by: bag)
+    view.rx.tapGesture { [unowned self] gestureRecognizer, delegate in
+      gestureRecognizer.delegate = self
+    }.skip(1)
+      .throttle(0.5, scheduler: MainScheduler.instance)
+      .flatMap { [unowned self] _ -> Observable<Bool> in
+        return self.animateBtn(willShow: false)
+      }.subscribe(onNext: { [unowned self] bool in
+        if bool {
+          self.viewModel.dismissPopUpView()
+        }
+      })
+      .disposed(by: bag)
     
     hideBtn.rx.tap
       .throttle(0.5, scheduler: MainScheduler.instance)
@@ -291,22 +305,21 @@ class PopUpViewController: UIViewController, BindableType {
       .filter{ [unowned self] _ in self.categoryTxtField.text != nil &&
         !self.categoryTxtField.text!.components(separatedBy: " ").joined(separator: "").isEmpty
       }
-      .map { [unowned self] _  -> Category in
+      .map { [unowned self] _  -> String in
         let title = self.categoryTxtField.text!
-        return Category(category: title)
-      }.debug()
-      .bind(to: viewModel.onAddNewCategory().inputs)
+        return title
+      }
+      .bind(to: viewModel.onAddNewCategory.inputs)
       .disposed(by: bag)
     
-    viewModel.onAddNewCategory().executionObservables
-      .debug("aaa")
+    viewModel.onAddNewCategory.executionObservables
       .take(1)
-      .do(onNext: { [unowned self] _ in
-        self.categoryTxtField.text = ""
+      .do(onNext: { [weak self] _ in
+        self?.categoryTxtField.text = ""
         UIView.animate(withDuration: 1.0, animations: {
-          self.popUpView.transform = .identity
+          self?.popUpView.transform = .identity
         }) { (success) in
-          self.popUpView.isHidden = true
+          self?.popUpView.isHidden = true
         }
       })
       .flatMap { [unowned self] _ -> Observable<Bool> in
@@ -361,4 +374,10 @@ class PopUpViewController: UIViewController, BindableType {
     
   }
   
+}
+
+extension PopUpViewController: UIGestureRecognizerDelegate {
+  func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+    return touch.view == gestureRecognizer.view
+  }
 }

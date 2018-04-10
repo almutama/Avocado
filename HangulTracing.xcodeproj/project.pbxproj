@@ -60,7 +60,6 @@
 		48770E3B1FC6B3B70057159A /* CategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48770E3A1FC6B3B70057159A /* CategoryTests.swift */; };
 		488E6A681FCC06F90065F527 /* chalk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 488E6A671FCC06F90065F527 /* chalk.mp3 */; };
 		4890BB5D1FD1819B002B1921 /* PopUpBtnVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4890BB5C1FD1819B002B1921 /* PopUpBtnVCTests.swift */; };
-		48AD6F3F1FC3C06D0054FBD5 /* UICollectionViewCellExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD6F3E1FC3C06D0054FBD5 /* UICollectionViewCellExt.swift */; };
 		48AD6F401FC40C1E0054FBD5 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B620B1FBD7BDC00AE065F /* UIImageExt.swift */; };
 		48AD6F411FC415E60054FBD5 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979CE1FB31F66000C1E2A /* PinterestLayout.swift */; };
 		48AD6F441FC516000054FBD5 /* cheering.wav in Resources */ = {isa = PBXBuildFile; fileRef = 48AD6F431FC516000054FBD5 /* cheering.wav */; };
@@ -147,7 +146,6 @@
 		48770E3A1FC6B3B70057159A /* CategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTests.swift; sourceTree = "<group>"; };
 		488E6A671FCC06F90065F527 /* chalk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chalk.mp3; sourceTree = "<group>"; };
 		4890BB5C1FD1819B002B1921 /* PopUpBtnVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpBtnVCTests.swift; sourceTree = "<group>"; };
-		48AD6F3E1FC3C06D0054FBD5 /* UICollectionViewCellExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExt.swift; sourceTree = "<group>"; };
 		48AD6F431FC516000054FBD5 /* cheering.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cheering.wav; sourceTree = "<group>"; };
 		48AD6F4F1FC516590054FBD5 /* whistle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = whistle.wav; sourceTree = "<group>"; };
 		48AD6F511FC516E60054FBD5 /* writing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = writing.mp3; sourceTree = "<group>"; };
@@ -293,7 +291,6 @@
 				484979E21FB5747F000C1E2A /* UIColorExt.swift */,
 				484B620B1FBD7BDC00AE065F /* UIImageExt.swift */,
 				484B620D1FBD8FB600AE065F /* Shuffle.swift */,
-				48AD6F3E1FC3C06D0054FBD5 /* UICollectionViewCellExt.swift */,
 				4847835F2076581C00C5A60F /* UINavigationController.swift */,
 			);
 			path = Ext;
@@ -701,7 +698,6 @@
 				484783652077566700C5A60F /* GameViewModel.swift in Sources */,
 				484979CB1FB31CFF000C1E2A /* CardViewController.swift in Sources */,
 				484979ED1FB6D7B0000C1E2A /* GameView.swift in Sources */,
-				48AD6F3F1FC3C06D0054FBD5 /* UICollectionViewCellExt.swift in Sources */,
 				484783552074A33A00C5A60F /* SceneTransitionType.swift in Sources */,
 				484B620C1FBD7BDC00AE065F /* UIImageExt.swift in Sources */,
 				4847833F207380A300C5A60F /* LocalService.swift in Sources */,
