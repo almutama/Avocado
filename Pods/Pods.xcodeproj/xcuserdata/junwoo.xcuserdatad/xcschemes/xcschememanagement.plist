@@ -9,12 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-HangulTracing.xcscheme</key>
+		<key>Pods-Avocado.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-HangulTracingTests.xcscheme</key>
+		<key>Pods-AvocadoTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

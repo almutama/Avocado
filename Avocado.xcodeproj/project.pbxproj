@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		44ED2227C34A2DD12A2FB21E /* Pods_HangulTracingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF5C07A6797CBFBD7394FE1 /* Pods_HangulTracingTests.framework */; };
 		4802982D1FC836D400A5DB3A /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802982C1FC836D400A5DB3A /* PopUpViewController.swift */; };
 		4847833F207380A300C5A60F /* LocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847833E207380A300C5A60F /* LocalService.swift */; };
 		484783422073848400C5A60F /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484783412073848400C5A60F /* CategoryViewModel.swift */; };
@@ -27,9 +26,7 @@
 		484979AE1FB15F37000C1E2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979AD1FB15F37000C1E2A /* Constants.swift */; };
 		484979AF1FB1659B000C1E2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979AD1FB15F37000C1E2A /* Constants.swift */; };
 		484979B11FB16B80000C1E2A /* TracingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979B01FB16B80000C1E2A /* TracingViewController.swift */; };
-		484979B31FB16B90000C1E2A /* TracingVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979B21FB16B90000C1E2A /* TracingVCTests.swift */; };
 		484979B51FB17C41000C1E2A /* LetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979B41FB17C41000C1E2A /* LetterView.swift */; };
-		484979B71FB17C4F000C1E2A /* LetterViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979B61FB17C4F000C1E2A /* LetterViewTests.swift */; };
 		484979B91FB18E30000C1E2A /* NanumBarunpenB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 484979B81FB18E26000C1E2A /* NanumBarunpenB.otf */; };
 		484979BA1FB18E33000C1E2A /* NanumBarunpenB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 484979B81FB18E26000C1E2A /* NanumBarunpenB.otf */; };
 		484979BD1FB194A6000C1E2A /* CGPointExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979BC1FB194A6000C1E2A /* CGPointExt.swift */; };
@@ -38,15 +35,10 @@
 		484979C91FB31711000C1E2A /* WordCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979C81FB31711000C1E2A /* WordCardCell.swift */; };
 		484979CB1FB31CFF000C1E2A /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979CA1FB31CFF000C1E2A /* CardViewController.swift */; };
 		484979CF1FB31F66000C1E2A /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979CE1FB31F66000C1E2A /* PinterestLayout.swift */; };
-		484979D71FB455B1000C1E2A /* WordCardCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979D61FB455B1000C1E2A /* WordCardCellTests.swift */; };
-		484979D91FB45610000C1E2A /* DataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979D81FB45610000C1E2A /* DataProviderTests.swift */; };
-		484979DB1FB4564D000C1E2A /* CardListVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979DA1FB4564D000C1E2A /* CardListVCTests.swift */; };
 		484979DD1FB54B73000C1E2A /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979DC1FB54B73000C1E2A /* UIViewExt.swift */; };
-		484979DF1FB56ABC000C1E2A /* InputVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979DE1FB56ABC000C1E2A /* InputVCTests.swift */; };
 		484979E31FB5747F000C1E2A /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979E21FB5747F000C1E2A /* UIColorExt.swift */; };
 		484979E91FB6C450000C1E2A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979E81FB6C450000C1E2A /* GameViewController.swift */; };
 		484979ED1FB6D7B0000C1E2A /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979EC1FB6D7B0000C1E2A /* GameView.swift */; };
-		484979F81FBADE7C000C1E2A /* GameViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979F71FBADE7C000C1E2A /* GameViewTests.swift */; };
 		484B620A1FBD729F00AE065F /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B62091FBD729F00AE065F /* PlayerVC.swift */; };
 		484B620C1FBD7BDC00AE065F /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B620B1FBD7BDC00AE065F /* UIImageExt.swift */; };
 		484B620E1FBD8FB600AE065F /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B620D1FBD8FB600AE065F /* Shuffle.swift */; };
@@ -57,9 +49,7 @@
 		487037911FAC3D6200A966A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487037901FAC3D6200A966A2 /* AppDelegate.swift */; };
 		487037981FAC3D6200A966A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487037971FAC3D6200A966A2 /* Assets.xcassets */; };
 		4870379B1FAC3D6200A966A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487037991FAC3D6200A966A2 /* LaunchScreen.storyboard */; };
-		48770E3B1FC6B3B70057159A /* CategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48770E3A1FC6B3B70057159A /* CategoryTests.swift */; };
 		488E6A681FCC06F90065F527 /* chalk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 488E6A671FCC06F90065F527 /* chalk.mp3 */; };
-		4890BB5D1FD1819B002B1921 /* PopUpBtnVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4890BB5C1FD1819B002B1921 /* PopUpBtnVCTests.swift */; };
 		48AD6F401FC40C1E0054FBD5 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B620B1FBD7BDC00AE065F /* UIImageExt.swift */; };
 		48AD6F411FC415E60054FBD5 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979CE1FB31F66000C1E2A /* PinterestLayout.swift */; };
 		48AD6F441FC516000054FBD5 /* cheering.wav in Resources */ = {isa = PBXBuildFile; fileRef = 48AD6F431FC516000054FBD5 /* cheering.wav */; };
@@ -68,16 +58,8 @@
 		48AD6F5A1FC51D6F0054FBD5 /* open.wav in Resources */ = {isa = PBXBuildFile; fileRef = 48AD6F591FC51D6F0054FBD5 /* open.wav */; };
 		48AD6F601FC5225A0054FBD5 /* enter.wav in Resources */ = {isa = PBXBuildFile; fileRef = 48AD6F5D1FC5225A0054FBD5 /* enter.wav */; };
 		48AD6F641FC522DB0054FBD5 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD6F631FC522DB0054FBD5 /* SoundPlayer.swift */; };
-		48AD6F661FC534320054FBD5 /* CategoryCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD6F651FC534320054FBD5 /* CategoryCellTests.swift */; };
-		48AD6F681FC534610054FBD5 /* CategoryDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD6F671FC534610054FBD5 /* CategoryDataProviderTests.swift */; };
-		48AD6F6A1FC5347E0054FBD5 /* CategoryManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD6F691FC5347E0054FBD5 /* CategoryManagerTests.swift */; };
-		48AD6F6C1FC534C70054FBD5 /* CellVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD6F6B1FC534C70054FBD5 /* CellVCTests.swift */; };
-		48AD6F6E1FC534D40054FBD5 /* CategoryVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD6F6D1FC534D40054FBD5 /* CategoryVCTests.swift */; };
 		48AD6F701FC561770054FBD5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD6F6F1FC561770054FBD5 /* Category.swift */; };
-		48D1A2031FAC63BE00F4B9A6 /* CardManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D1A2021FAC63BE00F4B9A6 /* CardManagerTests.swift */; };
 		48D1A2051FAC66B900F4B9A6 /* WordCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D1A2041FAC66B900F4B9A6 /* WordCard.swift */; };
-		48D1A2071FAC673B00F4B9A6 /* WordCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D1A2061FAC673B00F4B9A6 /* WordCardTests.swift */; };
-		C40C83AF9C90D98D32F57681 /* Pods_HangulTracing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F57EDD03313F22B80C0933 /* Pods_HangulTracing.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +73,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		373FFA930EF7B5507EF3477D /* Pods-HangulTracing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HangulTracing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HangulTracing/Pods-HangulTracing.debug.xcconfig"; sourceTree = "<group>"; };
+		3BA106A89ED9996EA22E5F52 /* Pods-Avocado.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avocado.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Avocado/Pods-Avocado.debug.xcconfig"; sourceTree = "<group>"; };
 		4802982C1FC836D400A5DB3A /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		4847833E207380A300C5A60F /* LocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalService.swift; sourceTree = "<group>"; };
 		484783412073848400C5A60F /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
@@ -110,9 +92,7 @@
 		4847836920778C8400C5A60F /* default_v1.0.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = default_v1.0.realm; sourceTree = "<group>"; };
 		484979AD1FB15F37000C1E2A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		484979B01FB16B80000C1E2A /* TracingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingViewController.swift; sourceTree = "<group>"; };
-		484979B21FB16B90000C1E2A /* TracingVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingVCTests.swift; sourceTree = "<group>"; };
 		484979B41FB17C41000C1E2A /* LetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterView.swift; sourceTree = "<group>"; };
-		484979B61FB17C4F000C1E2A /* LetterViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterViewTests.swift; sourceTree = "<group>"; };
 		484979B81FB18E26000C1E2A /* NanumBarunpenB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunpenB.otf; sourceTree = "<group>"; };
 		484979BC1FB194A6000C1E2A /* CGPointExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointExt.swift; sourceTree = "<group>"; };
 		484979C41FB2FED5000C1E2A /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
@@ -120,15 +100,10 @@
 		484979C81FB31711000C1E2A /* WordCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCardCell.swift; sourceTree = "<group>"; };
 		484979CA1FB31CFF000C1E2A /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		484979CE1FB31F66000C1E2A /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
-		484979D61FB455B1000C1E2A /* WordCardCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCardCellTests.swift; sourceTree = "<group>"; };
-		484979D81FB45610000C1E2A /* DataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderTests.swift; sourceTree = "<group>"; };
-		484979DA1FB4564D000C1E2A /* CardListVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListVCTests.swift; sourceTree = "<group>"; };
 		484979DC1FB54B73000C1E2A /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
-		484979DE1FB56ABC000C1E2A /* InputVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputVCTests.swift; sourceTree = "<group>"; };
 		484979E21FB5747F000C1E2A /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		484979E81FB6C450000C1E2A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		484979EC1FB6D7B0000C1E2A /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		484979F71FBADE7C000C1E2A /* GameViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewTests.swift; sourceTree = "<group>"; };
 		484B62091FBD729F00AE065F /* PlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
 		484B620B1FBD7BDC00AE065F /* UIImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
 		484B620D1FBD8FB600AE065F /* Shuffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shuffle.swift; sourceTree = "<group>"; };
@@ -136,36 +111,24 @@
 		484B62111FBEDD9700AE065F /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 		484B62161FC01F1100AE065F /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		484B621A1FC0295100AE065F /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
-		4870378D1FAC3D6200A966A2 /* HangulTracing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HangulTracing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4870378D1FAC3D6200A966A2 /* Avocado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Avocado.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		487037901FAC3D6200A966A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		487037971FAC3D6200A966A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4870379A1FAC3D6200A966A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4870379C1FAC3D6200A966A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		487037A11FAC3D6300A966A2 /* AvocadoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvocadoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		487037A71FAC3D6300A966A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48770E3A1FC6B3B70057159A /* CategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTests.swift; sourceTree = "<group>"; };
 		488E6A671FCC06F90065F527 /* chalk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chalk.mp3; sourceTree = "<group>"; };
-		4890BB5C1FD1819B002B1921 /* PopUpBtnVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpBtnVCTests.swift; sourceTree = "<group>"; };
 		48AD6F431FC516000054FBD5 /* cheering.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cheering.wav; sourceTree = "<group>"; };
 		48AD6F4F1FC516590054FBD5 /* whistle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = whistle.wav; sourceTree = "<group>"; };
 		48AD6F511FC516E60054FBD5 /* writing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = writing.mp3; sourceTree = "<group>"; };
 		48AD6F591FC51D6F0054FBD5 /* open.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = open.wav; sourceTree = "<group>"; };
 		48AD6F5D1FC5225A0054FBD5 /* enter.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = enter.wav; sourceTree = "<group>"; };
 		48AD6F631FC522DB0054FBD5 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
-		48AD6F651FC534320054FBD5 /* CategoryCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellTests.swift; sourceTree = "<group>"; };
-		48AD6F671FC534610054FBD5 /* CategoryDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDataProviderTests.swift; sourceTree = "<group>"; };
-		48AD6F691FC5347E0054FBD5 /* CategoryManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManagerTests.swift; sourceTree = "<group>"; };
-		48AD6F6B1FC534C70054FBD5 /* CellVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellVCTests.swift; sourceTree = "<group>"; };
-		48AD6F6D1FC534D40054FBD5 /* CategoryVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVCTests.swift; sourceTree = "<group>"; };
 		48AD6F6F1FC561770054FBD5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		48D1A2021FAC63BE00F4B9A6 /* CardManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardManagerTests.swift; sourceTree = "<group>"; };
 		48D1A2041FAC66B900F4B9A6 /* WordCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCard.swift; sourceTree = "<group>"; };
-		48D1A2061FAC673B00F4B9A6 /* WordCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCardTests.swift; sourceTree = "<group>"; };
-		90A3176324348AAAD5837702 /* Pods-HangulTracingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HangulTracingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HangulTracingTests/Pods-HangulTracingTests.release.xcconfig"; sourceTree = "<group>"; };
-		99B3EC0E1BE194E1C579ECAC /* Pods-HangulTracingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HangulTracingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HangulTracingTests/Pods-HangulTracingTests.debug.xcconfig"; sourceTree = "<group>"; };
-		99F57EDD03313F22B80C0933 /* Pods_HangulTracing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HangulTracing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ECF9B82077276BCE7984F5F6 /* Pods-HangulTracing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HangulTracing.release.xcconfig"; path = "Pods/Target Support Files/Pods-HangulTracing/Pods-HangulTracing.release.xcconfig"; sourceTree = "<group>"; };
-		EDF5C07A6797CBFBD7394FE1 /* Pods_HangulTracingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HangulTracingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		657441249C0A3B33FA70C9FF /* Pods-AvocadoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvocadoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AvocadoTests/Pods-AvocadoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9841330ED69EE8B4863D85F1 /* Pods-AvocadoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvocadoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AvocadoTests/Pods-AvocadoTests.release.xcconfig"; sourceTree = "<group>"; };
+		C80CAF436D3F7822B14DCF4B /* Pods-Avocado.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avocado.release.xcconfig"; path = "Pods/Target Support Files/Pods-Avocado/Pods-Avocado.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +136,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C40C83AF9C90D98D32F57681 /* Pods_HangulTracing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,7 +143,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44ED2227C34A2DD12A2FB21E /* Pods_HangulTracingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,8 +152,6 @@
 		258122CF40FE4CFE77CF57B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				99F57EDD03313F22B80C0933 /* Pods_HangulTracing.framework */,
-				EDF5C07A6797CBFBD7394FE1 /* Pods_HangulTracingTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -307,8 +266,7 @@
 		487037841FAC3D6200A966A2 = {
 			isa = PBXGroup;
 			children = (
-				4870378F1FAC3D6200A966A2 /* HangulTracing */,
-				487037A41FAC3D6300A966A2 /* HangulTracingTests */,
+				4870378F1FAC3D6200A966A2 /* Avocado */,
 				4870378E1FAC3D6200A966A2 /* Products */,
 				A6D67BDA226EADD36968BE8E /* Pods */,
 				258122CF40FE4CFE77CF57B2 /* Frameworks */,
@@ -318,13 +276,13 @@
 		4870378E1FAC3D6200A966A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4870378D1FAC3D6200A966A2 /* HangulTracing.app */,
+				4870378D1FAC3D6200A966A2 /* Avocado.app */,
 				487037A11FAC3D6300A966A2 /* AvocadoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4870378F1FAC3D6200A966A2 /* HangulTracing */ = {
+		4870378F1FAC3D6200A966A2 /* Avocado */ = {
 			isa = PBXGroup;
 			children = (
 				4847836820778C4200C5A60F /* Asset */,
@@ -339,18 +297,7 @@
 				487037B11FAC3D9B00A966A2 /* View */,
 				487037B01FAC3D9200A966A2 /* Controller */,
 			);
-			path = HangulTracing;
-			sourceTree = "<group>";
-		};
-		487037A41FAC3D6300A966A2 /* HangulTracingTests */ = {
-			isa = PBXGroup;
-			children = (
-				48D1A2011FAC63A900F4B9A6 /* Model */,
-				48D1A20A1FAC7D4400F4B9A6 /* View */,
-				487037B61FAC3EEA00A966A2 /* Controller */,
-				487037A71FAC3D6300A966A2 /* Info.plist */,
-			);
-			path = HangulTracingTests;
+			path = Avocado;
 			sourceTree = "<group>";
 		};
 		487037B01FAC3D9200A966A2 /* Controller */ = {
@@ -392,19 +339,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		487037B61FAC3EEA00A966A2 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				484979B21FB16B90000C1E2A /* TracingVCTests.swift */,
-				484979DA1FB4564D000C1E2A /* CardListVCTests.swift */,
-				484979DE1FB56ABC000C1E2A /* InputVCTests.swift */,
-				48AD6F6B1FC534C70054FBD5 /* CellVCTests.swift */,
-				48AD6F6D1FC534D40054FBD5 /* CategoryVCTests.swift */,
-				4890BB5C1FD1819B002B1921 /* PopUpBtnVCTests.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		48AD6F421FC515C50054FBD5 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,37 +352,13 @@
 			path = Sound;
 			sourceTree = "<group>";
 		};
-		48D1A2011FAC63A900F4B9A6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				48D1A2021FAC63BE00F4B9A6 /* CardManagerTests.swift */,
-				48AD6F691FC5347E0054FBD5 /* CategoryManagerTests.swift */,
-				484979D81FB45610000C1E2A /* DataProviderTests.swift */,
-				48AD6F671FC534610054FBD5 /* CategoryDataProviderTests.swift */,
-				48D1A2061FAC673B00F4B9A6 /* WordCardTests.swift */,
-				48770E3A1FC6B3B70057159A /* CategoryTests.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		48D1A20A1FAC7D4400F4B9A6 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				484979B61FB17C4F000C1E2A /* LetterViewTests.swift */,
-				484979F71FBADE7C000C1E2A /* GameViewTests.swift */,
-				484979D61FB455B1000C1E2A /* WordCardCellTests.swift */,
-				48AD6F651FC534320054FBD5 /* CategoryCellTests.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		A6D67BDA226EADD36968BE8E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				373FFA930EF7B5507EF3477D /* Pods-HangulTracing.debug.xcconfig */,
-				ECF9B82077276BCE7984F5F6 /* Pods-HangulTracing.release.xcconfig */,
-				99B3EC0E1BE194E1C579ECAC /* Pods-HangulTracingTests.debug.xcconfig */,
-				90A3176324348AAAD5837702 /* Pods-HangulTracingTests.release.xcconfig */,
+				3BA106A89ED9996EA22E5F52 /* Pods-Avocado.debug.xcconfig */,
+				C80CAF436D3F7822B14DCF4B /* Pods-Avocado.release.xcconfig */,
+				657441249C0A3B33FA70C9FF /* Pods-AvocadoTests.debug.xcconfig */,
+				9841330ED69EE8B4863D85F1 /* Pods-AvocadoTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -473,7 +383,7 @@
 			);
 			name = Avocado;
 			productName = HangulTracing;
-			productReference = 4870378D1FAC3D6200A966A2 /* HangulTracing.app */;
+			productReference = 4870378D1FAC3D6200A966A2 /* Avocado.app */;
 			productType = "com.apple.product-type.application";
 		};
 		487037A01FAC3D6200A966A2 /* AvocadoTests */ = {
@@ -569,7 +479,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		0C105BEAE0B18D2E50B8EA01 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -579,7 +489,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HangulTracing/Pods-HangulTracing-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Avocado/Pods-Avocado-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3BE1944ABE572E3E7FDD4AA2 /* [CP] Embed Pods Frameworks */ = {
@@ -594,12 +504,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HangulTracingTests/Pods-HangulTracingTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AvocadoTests/Pods-AvocadoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5CB2137B7FA699A0145CC457 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -609,7 +519,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HangulTracingTests/Pods-HangulTracingTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AvocadoTests/Pods-AvocadoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6C82F06F7E79FCE1C99F07AE /* [CP] Check Pods Manifest.lock */ = {
@@ -623,7 +533,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HangulTracingTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AvocadoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -641,7 +551,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HangulTracing-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Avocado-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -654,11 +564,11 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HangulTracing/Pods-HangulTracing-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Avocado/Pods-Avocado-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer-13/iOS/RevealServer.framework",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-14/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
@@ -679,7 +589,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HangulTracing/Pods-HangulTracing-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Avocado/Pods-Avocado-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -735,24 +645,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48AD6F661FC534320054FBD5 /* CategoryCellTests.swift in Sources */,
 				48AD6F411FC415E60054FBD5 /* PinterestLayout.swift in Sources */,
-				48AD6F681FC534610054FBD5 /* CategoryDataProviderTests.swift in Sources */,
-				48770E3B1FC6B3B70057159A /* CategoryTests.swift in Sources */,
-				48AD6F6E1FC534D40054FBD5 /* CategoryVCTests.swift in Sources */,
-				484979B71FB17C4F000C1E2A /* LetterViewTests.swift in Sources */,
-				484979D71FB455B1000C1E2A /* WordCardCellTests.swift in Sources */,
-				484979B31FB16B90000C1E2A /* TracingVCTests.swift in Sources */,
-				4890BB5D1FD1819B002B1921 /* PopUpBtnVCTests.swift in Sources */,
-				48AD6F6A1FC5347E0054FBD5 /* CategoryManagerTests.swift in Sources */,
 				484979AF1FB1659B000C1E2A /* Constants.swift in Sources */,
-				48AD6F6C1FC534C70054FBD5 /* CellVCTests.swift in Sources */,
-				484979F81FBADE7C000C1E2A /* GameViewTests.swift in Sources */,
-				48D1A2031FAC63BE00F4B9A6 /* CardManagerTests.swift in Sources */,
-				484979D91FB45610000C1E2A /* DataProviderTests.swift in Sources */,
-				484979DB1FB4564D000C1E2A /* CardListVCTests.swift in Sources */,
-				484979DF1FB56ABC000C1E2A /* InputVCTests.swift in Sources */,
-				48D1A2071FAC673B00F4B9A6 /* WordCardTests.swift in Sources */,
 				48AD6F401FC40C1E0054FBD5 /* UIImageExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -888,14 +782,14 @@
 		};
 		487037AB1FAC3D6300A966A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 373FFA930EF7B5507EF3477D /* Pods-HangulTracing.debug.xcconfig */;
+			baseConfigurationReference = 3BA106A89ED9996EA22E5F52 /* Pods-Avocado.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CA736F4E8H;
-				INFOPLIST_FILE = HangulTracing/Asset/Info.plist;
+				INFOPLIST_FILE = Avocado/Asset/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Avocado;
+				PRODUCT_BUNDLE_IDENTIFIER = samchon.avocado;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -904,14 +798,14 @@
 		};
 		487037AC1FAC3D6300A966A2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ECF9B82077276BCE7984F5F6 /* Pods-HangulTracing.release.xcconfig */;
+			baseConfigurationReference = C80CAF436D3F7822B14DCF4B /* Pods-Avocado.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CA736F4E8H;
-				INFOPLIST_FILE = HangulTracing/Asset/Info.plist;
+				INFOPLIST_FILE = Avocado/Asset/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Avocado;
+				PRODUCT_BUNDLE_IDENTIFIER = samchon.avocado;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -920,7 +814,7 @@
 		};
 		487037AE1FAC3D6300A966A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99B3EC0E1BE194E1C579ECAC /* Pods-HangulTracingTests.debug.xcconfig */;
+			baseConfigurationReference = 657441249C0A3B33FA70C9FF /* Pods-AvocadoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -940,7 +834,7 @@
 		};
 		487037AF1FAC3D6300A966A2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90A3176324348AAAD5837702 /* Pods-HangulTracingTests.release.xcconfig */;
+			baseConfigurationReference = 9841330ED69EE8B4863D85F1 /* Pods-AvocadoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

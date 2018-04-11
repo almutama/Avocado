@@ -1,6 +1,0 @@
-framework module Pods_HangulTracingTests {
-  umbrella header "Pods-HangulTracingTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
