@@ -18,7 +18,10 @@ class CardViewController: UIViewController, BindableType {
   var selectedCell: WordCardCell?
   private let transition = PopAnimator()
   lazy var collectionView: UICollectionView = {
-    let view = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: PinterestLayout())
+    let view = UICollectionView(frame: CGRect(x: 0, y: 0,
+                                              width: UIScreen.main.bounds.width,
+                                              height: UIScreen.main.bounds.height),
+                                collectionViewLayout: PinterestLayout())
     view.backgroundColor = UIColor.clear
     view.register(WordCardCell.self, forCellWithReuseIdentifier: WordCardCell.reuseIdentifier)
     return view
@@ -134,7 +137,10 @@ class CardViewController: UIViewController, BindableType {
         let viewHeight = imgHeight * viewWidth / imgWidth
         let centerX = UIScreen.main.bounds.width / 2
         let centerY = UIScreen.main.bounds.height / 2
-        let rect = CGRect(x: centerX - viewWidth / 2, y: centerY - viewHeight / 2, width: viewWidth, height: viewHeight)
+        let rect = CGRect(x: centerX - viewWidth / 2,
+                          y: centerY - viewHeight / 2,
+                          width: viewWidth,
+                          height: viewHeight)
         let card = self.viewModel.cardAt(index: indexPath.item)
         self.viewModel.goToPopCardScene(rect: rect, card: card)
       })
@@ -144,8 +150,12 @@ class CardViewController: UIViewController, BindableType {
   func onDelete(cardWord: String) -> CocoaAction {
     return CocoaAction {
       return Observable<()>.create { [unowned self] observer in
-        let alertVC = UIAlertController(title: "알림", message: "해당 카드가 삭제됩니다. 정말 삭제하시겠습니까?", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+        let alertVC = UIAlertController(title: "알림",
+                                        message: "해당 카드가 삭제됩니다. 정말 삭제하시겠습니까?",
+                                        preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "Delete",
+                                        style: .destructive,
+                                        handler: { _ in
           self.viewModel.removeCardAt(word: cardWord)
             .subscribe(onCompleted: {
               self.viewModel.changeCellMode(toNormal: true)
@@ -153,7 +163,9 @@ class CardViewController: UIViewController, BindableType {
             })
             .disposed(by: self.bag)
         }))
-        alertVC.addAction(UIAlertAction(title: "Cancel", style: .default, handler: {_ in
+        alertVC.addAction(UIAlertAction(title: "Cancel",
+                                        style: .default,
+                                        handler: {_ in
           self.viewModel.changeCellMode(toNormal: true)
           observer.onCompleted()
         }))
@@ -172,14 +184,20 @@ class CardViewController: UIViewController, BindableType {
         initialTouchPoint = touchPoint
       } else if recognizer.state == UIGestureRecognizerState.changed {
         if touchPoint.y - initialTouchPoint.y > 0 {
-          self.view.frame = CGRect(x: 0, y: touchPoint.y - initialTouchPoint.y, width: self.view.frame.size.width, height: self.view.frame.size.height)
+          self.view.frame = CGRect(x: 0,
+                                   y: touchPoint.y - initialTouchPoint.y,
+                                   width: self.view.frame.size.width,
+                                   height: self.view.frame.size.height)
         }
       } else if recognizer.state == UIGestureRecognizerState.ended || recognizer.state == UIGestureRecognizerState.cancelled {
         if touchPoint.y - initialTouchPoint.y > 100 {
           self.viewModel.dismissCardView()
         } else {
           UIView.animate(withDuration: 0.3, animations: {
-            self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+            self.view.frame = CGRect(x: 0,
+                                     y: 0,
+                                     width: self.view.frame.size.width,
+                                     height: self.view.frame.size.height)
           })
         }
       }

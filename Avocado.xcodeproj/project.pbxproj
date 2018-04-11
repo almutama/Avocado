@@ -23,8 +23,6 @@
 		484783652077566700C5A60F /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484783642077566700C5A60F /* GameViewModel.swift */; };
 		4847836720778AA600C5A60F /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847836620778AA600C5A60F /* RealmConfig.swift */; };
 		4847836A207797B100C5A60F /* default_v1.0.realm in Resources */ = {isa = PBXBuildFile; fileRef = 4847836920778C8400C5A60F /* default_v1.0.realm */; };
-		484979AE1FB15F37000C1E2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979AD1FB15F37000C1E2A /* Constants.swift */; };
-		484979AF1FB1659B000C1E2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979AD1FB15F37000C1E2A /* Constants.swift */; };
 		484979B11FB16B80000C1E2A /* TracingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979B01FB16B80000C1E2A /* TracingViewController.swift */; };
 		484979B51FB17C41000C1E2A /* LetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979B41FB17C41000C1E2A /* LetterView.swift */; };
 		484979B91FB18E30000C1E2A /* NanumBarunpenB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 484979B81FB18E26000C1E2A /* NanumBarunpenB.otf */; };
@@ -90,7 +88,6 @@
 		484783642077566700C5A60F /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		4847836620778AA600C5A60F /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
 		4847836920778C8400C5A60F /* default_v1.0.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = default_v1.0.realm; sourceTree = "<group>"; };
-		484979AD1FB15F37000C1E2A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		484979B01FB16B80000C1E2A /* TracingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingViewController.swift; sourceTree = "<group>"; };
 		484979B41FB17C41000C1E2A /* LetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterView.swift; sourceTree = "<group>"; };
 		484979B81FB18E26000C1E2A /* NanumBarunpenB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunpenB.otf; sourceTree = "<group>"; };
@@ -234,14 +231,6 @@
 			path = Asset;
 			sourceTree = "<group>";
 		};
-		484979AC1FB15F27000C1E2A /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				484979AD1FB15F37000C1E2A /* Constants.swift */,
-			);
-			path = Constants;
-			sourceTree = "<group>";
-		};
 		484979BB1FB19492000C1E2A /* Ext */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,7 +281,6 @@
 				48AD6F421FC515C50054FBD5 /* Sound */,
 				484979BB1FB19492000C1E2A /* Ext */,
 				484B621E1FC2C77D00AE065F /* Layouts */,
-				484979AC1FB15F27000C1E2A /* Constants */,
 				487037B21FAC3DA300A966A2 /* Model */,
 				487037B11FAC3D9B00A966A2 /* View */,
 				487037B01FAC3D9200A966A2 /* Controller */,
@@ -622,7 +610,6 @@
 				484B621B1FC0295100AE065F /* CategoryCell.swift in Sources */,
 				484783532074A31F00C5A60F /* SceneCoordinatorType.swift in Sources */,
 				484979C71FB30618000C1E2A /* CameraViewController.swift in Sources */,
-				484979AE1FB15F37000C1E2A /* Constants.swift in Sources */,
 				4847835A207605C700C5A60F /* PopCardViewModel.swift in Sources */,
 				484B620E1FBD8FB600AE065F /* Shuffle.swift in Sources */,
 				4847836720778AA600C5A60F /* RealmConfig.swift in Sources */,
@@ -646,7 +633,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				48AD6F411FC415E60054FBD5 /* PinterestLayout.swift in Sources */,
-				484979AF1FB1659B000C1E2A /* Constants.swift in Sources */,
 				48AD6F401FC40C1E0054FBD5 /* UIImageExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

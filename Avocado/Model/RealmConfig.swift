@@ -36,7 +36,8 @@ enum RealmConfig {
 extension URL {
   
   static func inDocumentsFolder(fileName: String) -> URL {
-    return URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0], isDirectory: true)
+    return URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0],
+               isDirectory: true)
       .appendingPathComponent(fileName)
   }
 }

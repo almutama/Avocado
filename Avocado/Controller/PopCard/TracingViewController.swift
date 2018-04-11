@@ -89,7 +89,8 @@ class TracingViewController: UIViewController, BindableType {
       }
     })
     
-    scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width * CGFloat(characters.count), height: UIScreen.main.bounds.height - 44.0)
+    scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width * CGFloat(characters.count),
+                                    height: UIScreen.main.bounds.height - 44.0)
   }
   
   func bindViewModel() {
@@ -113,7 +114,10 @@ class TracingViewController: UIViewController, BindableType {
     }
     characterViews.removeAll()
     for i in 0..<characters.count {
-      let view = LetterView(frame: CGRect(x: UIScreen.main.bounds.width * CGFloat(i), y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 44.0), letter: String(characters[i]))
+      let view = LetterView(frame: CGRect(x: UIScreen.main.bounds.width * CGFloat(i),
+                                          y: 0, width: UIScreen.main.bounds.width,
+                                          height: UIScreen.main.bounds.height - 44.0),
+                            letter: String(characters[i]))
       characterViews.append(view)
       scrollView.addSubview(view)
       view.completeSubject.asObservable()
@@ -128,13 +132,24 @@ class TracingViewController: UIViewController, BindableType {
     let selectedWord = viewModel.selectedCard.word
     let page = Int(scrollView.contentOffset.x / scrollView.bounds.size.width)
     if page < characterViews.count - 1 {
-      UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
+      UIView.animate(withDuration: 0.5,
+                     delay: 0,
+                     options: UIViewAnimationOptions.curveLinear,
+                     animations: {
         self.scrollView.contentOffset.x = self.scrollView.bounds.size.width * CGFloat(page + 1)}, completion: nil)
     } else if page == characterViews.count - 1 {
-      let lastView = GameView(frame: CGRect(x: UIScreen.main.bounds.width * CGFloat(characterViews.count), y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), word: selectedWord)
+      let lastView = GameView(frame: CGRect(x: UIScreen.main.bounds.width * CGFloat(characterViews.count),
+                                            y: 0,
+                                            width: UIScreen.main.bounds.width,
+                                            height: UIScreen.main.bounds.height),
+                              word: selectedWord)
       scrollView.addSubview(lastView)
-      UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
-        self.scrollView.contentOffset.x = self.scrollView.bounds.size.width * CGFloat(page + 1)}, completion: nil)
+      UIView.animate(withDuration: 0.5,
+                     delay: 0,
+                     options: UIViewAnimationOptions.curveLinear,
+                     animations: {
+        self.scrollView.contentOffset.x = self.scrollView.bounds.size.width * CGFloat(page + 1)},
+                     completion: nil)
       synthesizeSpeech(fromString: selectedWord)
       audioPlayer.playSoundEffect(name: "cheering", extender: "wav")
     }

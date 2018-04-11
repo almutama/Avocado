@@ -275,9 +275,12 @@ class PopUpViewController: UIViewController, BindableType {
           self.viewModel.goToInputScene()
         } else if let _ = self.viewModel.parentViewModel as? CategoryViewModel {
           self.popUpView.isHidden = false
-          UIView.animate(withDuration: 1.0, animations: {
-            self.popUpView.transform = CGAffineTransform(translationX: 0, y: UIScreen.main.bounds.height / 2)
-          }, completion: nil)
+          UIView.animate(withDuration: 1.0,
+                         animations: {
+            self.popUpView.transform = CGAffineTransform(translationX: 0,
+                                                         y: UIScreen.main.bounds.height / 2)
+          },
+                         completion: nil)
         }
       })
       .disposed(by: bag)
@@ -303,7 +306,10 @@ class PopUpViewController: UIViewController, BindableType {
     saveBtn.rx.tap
       .throttle(0.5, scheduler: MainScheduler.instance)
       .filter{ [unowned self] _ in self.categoryTxtField.text != nil &&
-        !self.categoryTxtField.text!.components(separatedBy: " ").joined(separator: "").isEmpty
+        !self.categoryTxtField.text!
+          .components(separatedBy: " ")
+          .joined(separator: "")
+          .isEmpty
       }
       .map { [unowned self] _  -> String in
         let title = self.categoryTxtField.text!

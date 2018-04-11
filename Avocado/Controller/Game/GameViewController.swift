@@ -182,15 +182,26 @@ class GameViewController: UIViewController, orientationIsOnlyLandScapeRight, Bin
   func goToNextWords() {
     let page = Int(scrollView.contentOffset.x / scrollView.bounds.size.width)
     if viewModel.canPaging(page: page) {
-      UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
+      UIView.animate(withDuration: 0.5,
+                     delay: 0,
+                     options: UIViewAnimationOptions.curveLinear,
+                     animations: {
         self.scrollView.contentOffset.x = self.scrollView.bounds.size.width * CGFloat(page + 1)}, completion: nil)
     } else {
       timer.invalidate()
-      let scoreView = GameView(frame: CGRect(x: UIScreen.main.bounds.width * CGFloat(viewModel.numberOfCards()), y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), word: "\(greatCount) 점 / \(viewModel.numberOfCards()) 점")
+      let scoreView = GameView(frame: CGRect(x: UIScreen.main.bounds.width * CGFloat(viewModel.numberOfCards()),
+                                             y: 0,
+                                             width: UIScreen.main.bounds.width,
+                                             height: UIScreen.main.bounds.height),
+                               word: "\(greatCount) 점 / \(viewModel.numberOfCards()) 점")
       scrollView.addSubview(scoreView)
       audioPlayer.playSoundEffect(name: "cheering", extender: "wav")
-      UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
-        self.scrollView.contentOffset.x = self.scrollView.bounds.size.width * CGFloat(page + 1)}, completion: nil)
+      UIView.animate(withDuration: 0.5,
+                     delay: 0,
+                     options: UIViewAnimationOptions.curveLinear,
+                     animations: {
+        self.scrollView.contentOffset.x = self.scrollView.bounds.size.width * CGFloat(page + 1)},
+                     completion: nil)
       motionManager.stopDeviceMotionUpdates()
       stopMovieRecording()
     }
@@ -206,14 +217,19 @@ class GameViewController: UIViewController, orientationIsOnlyLandScapeRight, Bin
       case .notAuthorized:
         DispatchQueue.main.async {
           let changePrivacySetting = "AVCam doesn't have permission to use the camera, please change privacy settings"
-          let message = NSLocalizedString(changePrivacySetting, comment: "Alert message when the user has denied access to the camera")
-          let alertController = UIAlertController(title: "AVCam", message: message, preferredStyle: .alert)
+          let message = NSLocalizedString(changePrivacySetting,
+                                          comment: "Alert message when the user has denied access to the camera")
+          let alertController = UIAlertController(title: "AVCam",
+                                                  message: message,
+                                                  preferredStyle: .alert)
           
-          alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
+          alertController.addAction(UIAlertAction(title: NSLocalizedString("OK",
+                                                                           comment: "Alert OK button"),
                                                   style: .cancel,
                                                   handler: nil))
           
-          alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"),
+          alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings",
+                                                                           comment: "Alert button to open Settings"),
                                                   style: .`default`,
                                                   handler: { _ in
                                                     UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!, options: [:], completionHandler: nil)
@@ -225,7 +241,9 @@ class GameViewController: UIViewController, orientationIsOnlyLandScapeRight, Bin
         DispatchQueue.main.async {
           let alertMsg = "Alert message when something goes wrong during capture session configuration"
           let message = NSLocalizedString("Unable to capture media", comment: alertMsg)
-          let alertController = UIAlertController(title: "AVCam", message: message, preferredStyle: .alert)
+          let alertController = UIAlertController(title: "AVCam",
+                                                  message: message,
+                                                  preferredStyle: .alert)
           
           alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
                                                   style: .cancel,
@@ -262,7 +280,11 @@ class GameViewController: UIViewController, orientationIsOnlyLandScapeRight, Bin
   }
   
   func startTimer() {
-    timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.updateTimer), userInfo: nil, repeats: true)
+    timer = Timer.scheduledTimer(timeInterval: 1,
+                                 target: self,
+                                 selector: #selector(GameViewController.updateTimer),
+                                 userInfo: nil,
+                                 repeats: true)
   }
   
   @objc func updateTimer() {
@@ -274,7 +296,11 @@ class GameViewController: UIViewController, orientationIsOnlyLandScapeRight, Bin
     if seconds == 0 {
       timer.invalidate()
       motionManager.stopDeviceMotionUpdates()
-      let scoreView = GameView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), word: "\(greatCount) 점 / \(viewModel.numberOfCards()) 점")
+      let scoreView = GameView(frame: CGRect(x: 0,
+                                             y: 0,
+                                             width: UIScreen.main.bounds.width,
+                                             height: UIScreen.main.bounds.height),
+                               word: "\(greatCount) 점 / \(viewModel.numberOfCards()) 점")
       self.view.addSubview(scoreView)
       audioPlayer.playSoundEffect(name: "cheering", extender: "wav")
       stopMovieRecording()
@@ -290,7 +316,9 @@ class GameViewController: UIViewController, orientationIsOnlyLandScapeRight, Bin
       //카메라 input
       do {
         var defaultVideoDevice: AVCaptureDevice?
-        if let frontCameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front) {
+        if let frontCameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera,
+                                                           for: .video,
+                                                           position: .front) {
           defaultVideoDevice = frontCameraDevice
         }
         let videoDeviceInput = try AVCaptureDeviceInput(device: defaultVideoDevice!)
@@ -358,12 +386,14 @@ class GameViewController: UIViewController, orientationIsOnlyLandScapeRight, Bin
         movieFileOutputConnection?.videoOrientation = .landscapeRight
         let availableVideoCodecTypes = movieFileOutput.availableVideoCodecTypes
         if availableVideoCodecTypes.contains(.hevc) {
-          movieFileOutput.setOutputSettings([AVVideoCodecKey: AVVideoCodecType.hevc], for: movieFileOutputConnection!)
+          movieFileOutput.setOutputSettings([AVVideoCodecKey: AVVideoCodecType.hevc],
+                                            for: movieFileOutputConnection!)
         }
         
         let outputFileName = NSUUID().uuidString
         let outputFilePath = (NSTemporaryDirectory() as NSString).appendingPathComponent((outputFileName as NSString).appendingPathExtension("mov")!)
-        movieFileOutput.startRecording(to: URL(fileURLWithPath: outputFilePath), recordingDelegate: self)
+        movieFileOutput.startRecording(to: URL(fileURLWithPath: outputFilePath),
+                                       recordingDelegate: self)
       }
     }
   }
@@ -419,7 +449,9 @@ extension GameViewController: AVCaptureFileOutputRecordingDelegate {
           }, completionHandler: { success, error in
             if success {
               
-              let alertController = UIAlertController(title: "알림", message: "영상이 성공적으로 저장되었습니다", preferredStyle: .alert)
+              let alertController = UIAlertController(title: "알림",
+                                                      message: "영상이 성공적으로 저장되었습니다",
+                                                      preferredStyle: .alert)
               alertController
                 .addAction(UIAlertAction(
                   title: NSLocalizedString("닫기", comment: "Alert OK button"),
@@ -457,7 +489,9 @@ extension GameViewController: AVCaptureFileOutputRecordingDelegate {
     sortOptions.fetchLimit = 1
     sortOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
     guard let lastVideoAsset = PHAsset.fetchAssets(with: sortOptions).lastObject else { fatalError() }
-    imageManager.requestAVAsset(forVideo: lastVideoAsset, options: nil, resultHandler: {(asset: AVAsset?, _: AVAudioMix?, _: [AnyHashable : Any]?) -> Void in
+    imageManager.requestAVAsset(forVideo: lastVideoAsset,
+                                options: nil,
+                                resultHandler: {(asset: AVAsset?, _: AVAudioMix?, _: [AnyHashable : Any]?) -> Void in
       if let urlAsset = asset as? AVURLAsset {
         DispatchQueue.main.async {
           let localVideoUrl: URL = urlAsset.url as URL

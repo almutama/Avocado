@@ -89,7 +89,7 @@ class CameraViewController: UIViewController, BindableType {
     cameraView.rx.tapGesture()
       .skip(1)
       .throttle(0.5, scheduler: MainScheduler.instance)
-      .filter{ [unowned self] recong in recong.numberOfTapsRequired == 1 }
+      .filter{ recong in recong.numberOfTapsRequired == 1 }
       .subscribe(onNext: { [unowned self] _ in
         self.cameraView.isUserInteractionEnabled = false
         let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg,

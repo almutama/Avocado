@@ -142,7 +142,10 @@ class InputViewController: UIViewController, BindableType {
     addBtn.rx.tap
       .throttle(0.5, scheduler: MainScheduler.instance)
       .filter{ [unowned self] _ in self.wordTextField.text != nil }
-      .filter{ [unowned self] _ in !self.wordTextField.text!.components(separatedBy: " ").joined(separator: "").isEmpty }
+      .filter{ [unowned self] _ in !self.wordTextField.text!
+        .components(separatedBy: " ")
+        .joined(separator: "")
+        .isEmpty }
       .filter{ [unowned self] _ in self.capturedPhotoData != nil }
       .map { [unowned self] _ -> (String, Data) in
         return (self.wordTextField.text!, self.capturedPhotoData!)

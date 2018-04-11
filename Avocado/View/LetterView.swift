@@ -12,7 +12,7 @@ import RxSwift
 import RxCocoa
 
 class LetterView: UIView {
-  var completeSubject = PublishSubject<Bool>()
+  let completeSubject = PublishSubject<Bool>()
   private let bag = DisposeBag()
   private var audioPlayer = SoundPlayer()
   private var letter: String!
@@ -39,7 +39,6 @@ class LetterView: UIView {
         self.synthesizeSpeech(fromString: letter)
       })
       .disposed(by: bag)
-    
     screenPointsSet = getScreenPointsSet()
   }
   
@@ -61,7 +60,8 @@ class LetterView: UIView {
       let cgpath = CTFontCreatePathForGlyph(font, glyphs[0], nil)!
       path.cgPath = cgpath
       path.apply(CGAffineTransform(scaleX: 1, y: -1))
-      path.apply(CGAffineTransform(translationX: (UIScreen.main.bounds.width - UIScreen.main.bounds.width * 4 / 5), y: UIScreen.main.bounds.height * 1 / 2))
+      path.apply(CGAffineTransform(translationX: (UIScreen.main.bounds.width - UIScreen.main.bounds.width * 4 / 5),
+                                   y: UIScreen.main.bounds.height * 1 / 2))
       
       UIColor.white.setStroke()
       path.stroke()
@@ -100,7 +100,6 @@ class LetterView: UIView {
   
   func getContainingPoints(tempSet: Set<CGPoint>, path: UIBezierPath) -> Set<CGPoint> {
     var pointsSet = Set<CGPoint>()
-    
     for point in tempSet {
       if path.contains(point) {
         pointsSet.insert(point)

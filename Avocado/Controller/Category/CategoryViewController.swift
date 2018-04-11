@@ -20,7 +20,8 @@ class CategoryViewController: UIViewController, BindableType {
   private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
   
   lazy var collectionView: UICollectionView = {
-    let view = UICollectionView(frame: self.view.frame, collectionViewLayout: UICollectionViewFlowLayout())
+    let view = UICollectionView(frame: self.view.frame,
+                                collectionViewLayout: UICollectionViewFlowLayout())
     view.backgroundColor = UIColor.clear
     view.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.reuseIdentifier)
     view.delegate = self
@@ -118,7 +119,9 @@ class CategoryViewController: UIViewController, BindableType {
   func onDelete(categoryTitle: String) -> CocoaAction {
     return CocoaAction {
       return Observable<()>.create { [unowned self] observer in
-        let alertVC = UIAlertController(title: "알림", message: "해당 카테고리의 단어들이 모두 삭제됩니다. 정말 삭제하시겠습니까?", preferredStyle: .alert)
+        let alertVC = UIAlertController(title: "알림",
+                                        message: "해당 카테고리의 단어들이 모두 삭제됩니다. 정말 삭제하시겠습니까?",
+                                        preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
           self.viewModel.removeCategoryAt(title: categoryTitle)
             .subscribe(onCompleted: {
@@ -168,18 +171,24 @@ extension CategoryViewController: UINavigationControllerDelegate {
 }
 
 extension CategoryViewController: UICollectionViewDelegateFlowLayout {
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+  func collectionView(_ collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      sizeForItemAt indexPath: IndexPath) -> CGSize {
     let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
     let availableWidth = UIScreen.main.bounds.width - paddingSpace
     let widthPerItem = availableWidth / itemsPerRow
     return CGSize(width: widthPerItem, height: widthPerItem)
   }
   
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+  func collectionView(_ collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      insetForSectionAt section: Int) -> UIEdgeInsets {
     return sectionInsets
   }
   
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+  func collectionView(_ collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     return sectionInsets.left
   }
 }
