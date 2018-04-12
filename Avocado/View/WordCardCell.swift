@@ -25,29 +25,24 @@ class WordCardCell: UICollectionViewCell {
     return btn
   }()
   
-  override init(frame: CGRect) {
-    super.init(frame: frame)
+  func setupSubviews() {
     contentView.layer.cornerRadius = 15
     contentView.clipsToBounds = true
     contentView.addSubview(imgView)
     contentView.addSubview(deleteBtn)
     deleteBtn.isHidden = true
-
+    
     imgView.snp.makeConstraints { (make) in
       make.edges.equalTo(contentView)
     }
-    
     deleteBtn.snp.makeConstraints { (make) in
       make.left.top.equalTo(contentView)
       make.width.height.equalTo(40)
     }
   }
   
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-  
   func configCell(card: WordCard, cellMode: CellMode, action: CocoaAction) {
+    setupSubviews()
     deleteBtn.rx.action = action
     
     if cellMode == .normal {

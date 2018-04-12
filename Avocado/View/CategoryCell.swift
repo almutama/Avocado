@@ -34,8 +34,7 @@ class CategoryCell: UICollectionViewCell {
     return btn
   }()
   
-  override init(frame: CGRect) {
-    super.init(frame: frame)
+  func setupSubViews() {
     contentView.backgroundColor = UIColor(hex: "FED230")
     contentView.layer.cornerRadius = 15
     contentView.clipsToBounds = true
@@ -53,11 +52,8 @@ class CategoryCell: UICollectionViewCell {
     }
   }
   
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-  
   func configCell(category: Category, cellMode: CellMode, action: CocoaAction) {
+    setupSubViews()
     deleteBtn.rx.action = action
     
     if cellMode == .normal {
