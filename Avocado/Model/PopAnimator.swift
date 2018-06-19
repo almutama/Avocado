@@ -22,7 +22,7 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
   
   func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     let containerView = transitionContext.containerView
-    containerView.backgroundColor = UIColor.white
+    
     guard let toView = transitionContext.view(forKey: .to) else { return }
     let cellView = presenting ? toView : transitionContext.view(forKey: .from)!
     

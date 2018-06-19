@@ -14,7 +14,7 @@ import Photos
 import RxSwift
 import RxCocoa
 
-class GameViewController: UIViewController, orientationIsOnlyLandScapeRight, BindableType {
+class GameViewController: UIViewController, orientationIsOnlyLandScapeRight, BindableType, Speakable {
   enum SessionSetupResult {
     case success
     case notAuthorized
@@ -22,7 +22,7 @@ class GameViewController: UIViewController, orientationIsOnlyLandScapeRight, Bin
   }
   private let bag = DisposeBag()
   var viewModel: GameViewModel!
-  private weak var playerVC: PlayerVC?
+  private var playerVC: PlayerVC?
   private var audioPlayer = SoundPlayer()
   private let session = AVCaptureSession()
   private let sessionQueue = DispatchQueue(label: "session queue")
@@ -42,10 +42,7 @@ class GameViewController: UIViewController, orientationIsOnlyLandScapeRight, Bin
     return timer
   }()
   private var seconds = 60
-  private lazy var speechSynthesizer: AVSpeechSynthesizer = {
-    let tool = AVSpeechSynthesizer()
-    return tool
-  }()
+  internal lazy var speechSynthesizer: AVSpeechSynthesizer = AVSpeechSynthesizer()
   private lazy var blurEffectView: UIVisualEffectView = {
     let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
     let view = UIVisualEffectView(effect: blurEffect)
@@ -274,11 +271,6 @@ class GameViewController: UIViewController, orientationIsOnlyLandScapeRight, Bin
     }
   }
   
-  func synthesizeSpeech(fromString string:String) {
-    let speechUtterence = AVSpeechUtterance(string: string)
-    speechSynthesizer.speak(speechUtterence)
-  }
-  
   func startTimer() {
     timer = Timer.scheduledTimer(timeInterval: 1,
                                  target: self,
@@ -462,9 +454,7 @@ extension GameViewController: AVCaptureFileOutputRecordingDelegate {
                   title: NSLocalizedString("영상보기", comment: "Alert button to open video"),
                   style: .`default`,
                   handler: { _ in
-                    
                     self.playVideo()
-                    
                 }))
               self.present(alertController, animated: true, completion: nil)
             }

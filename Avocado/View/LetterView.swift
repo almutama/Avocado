@@ -11,7 +11,7 @@ import AVFoundation
 import RxSwift
 import RxCocoa
 
-class LetterView: UIView {
+class LetterView: UIView, Speakable {
   let completeSubject = PublishSubject<Bool>()
   private let bag = DisposeBag()
   private var audioPlayer = SoundPlayer()
@@ -26,20 +26,25 @@ class LetterView: UIView {
     btn.setImage(UIImage(named: "speaker"), for: .normal)
     return btn
   }()
-  private var speechSynthesizer = AVSpeechSynthesizer()
+  internal lazy var speechSynthesizer = AVSpeechSynthesizer()
   
   init(frame: CGRect, letter: String) {
     self.letter = letter
     super.init(frame: frame)
     
     setupView()
+    
+    screenPointsSet = getScreenPointsSet()
+    bindViewModel()
+  }
+  
+  func bindViewModel() {
     speakerBtn.rx.tap
       .throttle(0.5, scheduler: MainScheduler.instance)
       .subscribe(onNext: { [unowned self] _ in
-        self.synthesizeSpeech(fromString: letter)
+        self.synthesizeSpeech(fromString: self.letter)
       })
       .disposed(by: bag)
-    screenPointsSet = getScreenPointsSet()
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -124,16 +129,10 @@ class LetterView: UIView {
     }
   }
   
-  func synthesizeSpeech(fromString string:String) {
-    let speechUtterence = AVSpeechUtterance(string: string)
-    speechSynthesizer.speak(speechUtterence)
-  }
-  
   override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
     if let touch = touches.first {
       let currentPoint = touch.location(in: self)
       if path.contains(currentPoint) {
-        
         addLine(currentPoint)
       }
     }

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3580986B2B844F8803D05B1F /* Pods_AvocadoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95B6AFACE82A4F68A3ACABB /* Pods_AvocadoTests.framework */; };
 		4802982D1FC836D400A5DB3A /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802982C1FC836D400A5DB3A /* PopUpViewController.swift */; };
+		4824A8FE20D8B28300A30FFC /* Speakable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4824A8FD20D8B28300A30FFC /* Speakable.swift */; };
 		4847833F207380A300C5A60F /* LocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847833E207380A300C5A60F /* LocalService.swift */; };
 		484783422073848400C5A60F /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484783412073848400C5A60F /* CategoryViewModel.swift */; };
 		484783442073BC4900C5A60F /* PopUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484783432073BC4900C5A60F /* PopUpViewModel.swift */; };
@@ -58,6 +60,7 @@
 		48AD6F641FC522DB0054FBD5 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD6F631FC522DB0054FBD5 /* SoundPlayer.swift */; };
 		48AD6F701FC561770054FBD5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD6F6F1FC561770054FBD5 /* Category.swift */; };
 		48D1A2051FAC66B900F4B9A6 /* WordCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D1A2041FAC66B900F4B9A6 /* WordCard.swift */; };
+		D845BA09B47B442345433FFE /* Pods_Avocado.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DB7D0E5AEC7C06B666FC084 /* Pods_Avocado.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +74,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2DB7D0E5AEC7C06B666FC084 /* Pods_Avocado.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Avocado.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA106A89ED9996EA22E5F52 /* Pods-Avocado.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avocado.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Avocado/Pods-Avocado.debug.xcconfig"; sourceTree = "<group>"; };
 		4802982C1FC836D400A5DB3A /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		4824A8FD20D8B28300A30FFC /* Speakable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speakable.swift; sourceTree = "<group>"; };
 		4847833E207380A300C5A60F /* LocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalService.swift; sourceTree = "<group>"; };
 		484783412073848400C5A60F /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		484783432073BC4900C5A60F /* PopUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewModel.swift; sourceTree = "<group>"; };
@@ -125,6 +130,7 @@
 		48D1A2041FAC66B900F4B9A6 /* WordCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCard.swift; sourceTree = "<group>"; };
 		657441249C0A3B33FA70C9FF /* Pods-AvocadoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvocadoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AvocadoTests/Pods-AvocadoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9841330ED69EE8B4863D85F1 /* Pods-AvocadoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvocadoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AvocadoTests/Pods-AvocadoTests.release.xcconfig"; sourceTree = "<group>"; };
+		A95B6AFACE82A4F68A3ACABB /* Pods_AvocadoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvocadoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C80CAF436D3F7822B14DCF4B /* Pods-Avocado.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avocado.release.xcconfig"; path = "Pods/Target Support Files/Pods-Avocado/Pods-Avocado.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D845BA09B47B442345433FFE /* Pods_Avocado.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3580986B2B844F8803D05B1F /* Pods_AvocadoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,8 +157,18 @@
 		258122CF40FE4CFE77CF57B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2DB7D0E5AEC7C06B666FC084 /* Pods_Avocado.framework */,
+				A95B6AFACE82A4F68A3ACABB /* Pods_AvocadoTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4824A8FC20D8B27000A30FFC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4824A8FD20D8B28300A30FFC /* Speakable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		484783402073847300C5A60F /* Category */ = {
@@ -274,6 +292,7 @@
 		4870378F1FAC3D6200A966A2 /* Avocado */ = {
 			isa = PBXGroup;
 			children = (
+				4824A8FC20D8B27000A30FFC /* Protocols */,
 				4847836820778C4200C5A60F /* Asset */,
 				4847834B2074A0AD00C5A60F /* Scene */,
 				487037901FAC3D6200A966A2 /* AppDelegate.swift */,
@@ -363,7 +382,6 @@
 				4870378A1FAC3D6200A966A2 /* Frameworks */,
 				4870378B1FAC3D6200A966A2 /* Resources */,
 				ABE372D97612E529646C0049 /* [CP] Embed Pods Frameworks */,
-				0C105BEAE0B18D2E50B8EA01 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -382,8 +400,6 @@
 				4870379D1FAC3D6200A966A2 /* Sources */,
 				4870379E1FAC3D6200A966A2 /* Frameworks */,
 				4870379F1FAC3D6200A966A2 /* Resources */,
-				3BE1944ABE572E3E7FDD4AA2 /* [CP] Embed Pods Frameworks */,
-				5CB2137B7FA699A0145CC457 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -465,51 +481,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0C105BEAE0B18D2E50B8EA01 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Avocado/Pods-Avocado-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3BE1944ABE572E3E7FDD4AA2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AvocadoTests/Pods-AvocadoTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5CB2137B7FA699A0145CC457 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AvocadoTests/Pods-AvocadoTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6C82F06F7E79FCE1C99F07AE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -556,7 +527,7 @@
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer-14/iOS/RevealServer.framework",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-15/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
@@ -592,6 +563,7 @@
 				484783602076581C00C5A60F /* UINavigationController.swift in Sources */,
 				48478363207738F000C5A60F /* InputViewModel.swift in Sources */,
 				48AD6F641FC522DB0054FBD5 /* SoundPlayer.swift in Sources */,
+				4824A8FE20D8B28300A30FFC /* Speakable.swift in Sources */,
 				484979B51FB17C41000C1E2A /* LetterView.swift in Sources */,
 				484783652077566700C5A60F /* GameViewModel.swift in Sources */,
 				484979CB1FB31CFF000C1E2A /* CardViewController.swift in Sources */,
