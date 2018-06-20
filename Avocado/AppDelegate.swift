@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let sceneCoordinator = SceneCoordinator()
     self.window = sceneCoordinator.window
     let localService = LocalService()
-    var audioPlayer = SoundPlayer()
+    let audioPlayer = SoundPlayer()
     let categoryViewModel = CategoryViewModel(localService: localService,
                                               sceneCoordinator: sceneCoordinator,
                                               audioPlayer: audioPlayer)

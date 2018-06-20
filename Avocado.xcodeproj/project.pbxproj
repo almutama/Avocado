@@ -24,7 +24,6 @@
 		48478363207738F000C5A60F /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48478362207738F000C5A60F /* InputViewModel.swift */; };
 		484783652077566700C5A60F /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484783642077566700C5A60F /* GameViewModel.swift */; };
 		4847836720778AA600C5A60F /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847836620778AA600C5A60F /* RealmConfig.swift */; };
-		4847836A207797B100C5A60F /* default_v1.0.realm in Resources */ = {isa = PBXBuildFile; fileRef = 4847836920778C8400C5A60F /* default_v1.0.realm */; };
 		484979B11FB16B80000C1E2A /* TracingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979B01FB16B80000C1E2A /* TracingViewController.swift */; };
 		484979B51FB17C41000C1E2A /* LetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979B41FB17C41000C1E2A /* LetterView.swift */; };
 		484979B91FB18E30000C1E2A /* NanumBarunpenB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 484979B81FB18E26000C1E2A /* NanumBarunpenB.otf */; };
@@ -49,6 +48,7 @@
 		487037911FAC3D6200A966A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487037901FAC3D6200A966A2 /* AppDelegate.swift */; };
 		487037981FAC3D6200A966A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487037971FAC3D6200A966A2 /* Assets.xcassets */; };
 		4870379B1FAC3D6200A966A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487037991FAC3D6200A966A2 /* LaunchScreen.storyboard */; };
+		4872EFEB20DA49E900F45423 /* default_v1.0.realm in Resources */ = {isa = PBXBuildFile; fileRef = 4872EFE920DA48E700F45423 /* default_v1.0.realm */; };
 		488E6A681FCC06F90065F527 /* chalk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 488E6A671FCC06F90065F527 /* chalk.mp3 */; };
 		48AD6F401FC40C1E0054FBD5 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B620B1FBD7BDC00AE065F /* UIImageExt.swift */; };
 		48AD6F411FC415E60054FBD5 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484979CE1FB31F66000C1E2A /* PinterestLayout.swift */; };
@@ -92,7 +92,6 @@
 		48478362207738F000C5A60F /* InputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
 		484783642077566700C5A60F /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		4847836620778AA600C5A60F /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
-		4847836920778C8400C5A60F /* default_v1.0.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = default_v1.0.realm; sourceTree = "<group>"; };
 		484979B01FB16B80000C1E2A /* TracingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingViewController.swift; sourceTree = "<group>"; };
 		484979B41FB17C41000C1E2A /* LetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterView.swift; sourceTree = "<group>"; };
 		484979B81FB18E26000C1E2A /* NanumBarunpenB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunpenB.otf; sourceTree = "<group>"; };
@@ -119,6 +118,7 @@
 		4870379A1FAC3D6200A966A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4870379C1FAC3D6200A966A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		487037A11FAC3D6300A966A2 /* AvocadoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvocadoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4872EFE920DA48E700F45423 /* default_v1.0.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = default_v1.0.realm; sourceTree = "<group>"; };
 		488E6A671FCC06F90065F527 /* chalk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chalk.mp3; sourceTree = "<group>"; };
 		48AD6F431FC516000054FBD5 /* cheering.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cheering.wav; sourceTree = "<group>"; };
 		48AD6F4F1FC516590054FBD5 /* whistle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = whistle.wav; sourceTree = "<group>"; };
@@ -167,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				4824A8FD20D8B28300A30FFC /* Speakable.swift */,
+				4847834E2074A15600C5A60F /* BindableType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -243,7 +244,7 @@
 			children = (
 				487037971FAC3D6200A966A2 /* Assets.xcassets */,
 				487037991FAC3D6200A966A2 /* LaunchScreen.storyboard */,
-				4847836920778C8400C5A60F /* default_v1.0.realm */,
+				4872EFE920DA48E700F45423 /* default_v1.0.realm */,
 				4870379C1FAC3D6200A966A2 /* Info.plist */,
 			);
 			path = Asset;
@@ -292,6 +293,7 @@
 		4870378F1FAC3D6200A966A2 /* Avocado */ = {
 			isa = PBXGroup;
 			children = (
+				4872EFE620DA3F5F00F45423 /* Service */,
 				4824A8FC20D8B27000A30FFC /* Protocols */,
 				4847836820778C4200C5A60F /* Asset */,
 				4847834B2074A0AD00C5A60F /* Scene */,
@@ -339,11 +341,17 @@
 				48AD6F6F1FC561770054FBD5 /* Category.swift */,
 				484B62111FBEDD9700AE065F /* PopAnimator.swift */,
 				48AD6F631FC522DB0054FBD5 /* SoundPlayer.swift */,
-				4847833E207380A300C5A60F /* LocalService.swift */,
-				4847834E2074A15600C5A60F /* BindableType.swift */,
 				4847836620778AA600C5A60F /* RealmConfig.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4872EFE620DA3F5F00F45423 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4847833E207380A300C5A60F /* LocalService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		48AD6F421FC515C50054FBD5 /* Sound */ = {
@@ -418,7 +426,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = samchon;
 				TargetAttributes = {
 					4870378C1FAC3D6200A966A2 = {
@@ -457,7 +465,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4847836A207797B100C5A60F /* default_v1.0.realm in Resources */,
+				4872EFEB20DA49E900F45423 /* default_v1.0.realm in Resources */,
 				4870379B1FAC3D6200A966A2 /* LaunchScreen.storyboard in Resources */,
 				48AD6F441FC516000054FBD5 /* cheering.wav in Resources */,
 				48AD6F501FC516590054FBD5 /* whistle.wav in Resources */,
@@ -645,6 +653,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -652,6 +661,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -702,6 +712,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -709,6 +720,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
