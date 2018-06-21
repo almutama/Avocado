@@ -16,7 +16,7 @@ class CategoryViewController: UIViewController, BindableType {
   var viewModel: CategoryViewModel!
   let transition = PopAnimator()
   private weak var selectedCell: CategoryCell?
-  private let itemsPerRow: CGFloat = 2
+  private var itemsPerRow: CGFloat = 2
   private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
   
   lazy var collectionView: UICollectionView = {
@@ -140,6 +140,15 @@ class CategoryViewController: UIViewController, BindableType {
         }
       }
     }
+  }
+  
+  override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    if traitCollection.horizontalSizeClass == .compact {
+      itemsPerRow = 2
+    } else {
+      itemsPerRow = 3
+    }
+    collectionView.collectionViewLayout.invalidateLayout()
   }
   
   override func viewWillTransition(to size: CGSize,

@@ -14,6 +14,7 @@ import Action
 class CardViewController: UIViewController, BindableType {
   private let bag = DisposeBag()
   var viewModel: CardViewModel!
+  private var columns: Int = 2
   private var initialTouchPoint: CGPoint = CGPoint(x: 0,y: 0)
   var selectedCell: WordCardCell?
   private let transition = PopAnimator()
@@ -21,7 +22,8 @@ class CardViewController: UIViewController, BindableType {
     let view = UICollectionView(frame: CGRect(x: 0, y: 0,
                                               width: UIScreen.main.bounds.width,
                                               height: UIScreen.main.bounds.height),
-                                collectionViewLayout: PinterestLayout())
+                                collectionViewLayout: PinterestLayout(numberOfColumns: columns,
+                                                                      layoutDelegate: self))
     view.backgroundColor = UIColor.clear
     view.register(WordCardCell.self, forCellWithReuseIdentifier: WordCardCell.reuseIdentifier)
     return view
@@ -50,9 +52,7 @@ class CardViewController: UIViewController, BindableType {
     view.addSubview(collectionView)
     view.addSubview(showBtn)
     view.addSubview(indicateLabel)
-    if let layout = collectionView.collectionViewLayout as? PinterestLayout {
-      layout.delegate = self
-    }
+    
     transition.dismissCompletion = {
       self.selectedCell?.isHidden = false
     }
@@ -204,6 +204,17 @@ class CardViewController: UIViewController, BindableType {
     }
   }
   
+  override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    if traitCollection.horizontalSizeClass == .compact {
+      columns = 2
+      collectionView.collectionViewLayout = PinterestLayout(numberOfColumns: 2, layoutDelegate: self)
+    } else {
+      columns = 3
+      collectionView.collectionViewLayout = PinterestLayout(numberOfColumns: 3, layoutDelegate: self)
+    }
+    collectionView.collectionViewLayout.invalidateLayout()
+  }
+  
   override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
     collectionView.collectionViewLayout.invalidateLayout()
   }
@@ -245,8 +256,7 @@ extension CardViewController: PinterestLayoutDelegate {
     let ratio = image.size.width / image.size.height
     let leftRightInset: CGFloat = 20.0
     let cellPadding: CGFloat = 6.0
-    let numberOfColumn: CGFloat = 2.0
-    let cellWidth = (UIScreen.main.bounds.width - leftRightInset - cellPadding) / numberOfColumn
+    let cellWidth = (UIScreen.main.bounds.width - leftRightInset - cellPadding) / CGFloat(columns)
     return cellWidth / ratio
   }
 }

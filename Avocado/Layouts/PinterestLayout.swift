@@ -15,15 +15,25 @@ protocol PinterestLayoutDelegate: class {
 
 class PinterestLayout: UICollectionViewLayout {
   weak var delegate: PinterestLayoutDelegate!
-  fileprivate var numberOfColumns = 2
+  fileprivate var numberOfColumns: Int!
   fileprivate var cellPadding: CGFloat = 6
-  fileprivate var cache = [UICollectionViewLayoutAttributes]()
+  fileprivate var cache = [Int:UICollectionViewLayoutAttributes]()
   fileprivate var contentHeight: CGFloat = 0
   fileprivate var contentWidth: CGFloat {
     guard let collectionView = collectionView else { return 0 }
     let insets = collectionView.contentInset
     collectionView.frame = UIScreen.main.bounds
     return collectionView.bounds.width - (insets.left + insets.right)
+  }
+  
+  init(numberOfColumns: Int, layoutDelegate: PinterestLayoutDelegate) {
+    self.numberOfColumns = numberOfColumns
+    self.delegate = layoutDelegate
+    super.init()
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
   
   //셀 사이즈
@@ -33,7 +43,7 @@ class PinterestLayout: UICollectionViewLayout {
   
   override func prepare() {
     
-    cache = []
+    cache = [Int:UICollectionViewLayoutAttributes]()
     contentHeight = 0
     guard let collectionView = collectionView else { return }
 
@@ -58,7 +68,7 @@ class PinterestLayout: UICollectionViewLayout {
       //캐시에 프레임값 담기
       let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
       attributes.frame = insetFrame
-      cache.append(attributes)
+      cache[indexPath.item] = attributes
 
       //셀 높이 업데이트, 셀의 y위치
       contentHeight = max(contentHeight, frame.maxY)
@@ -72,9 +82,9 @@ class PinterestLayout: UICollectionViewLayout {
     
     var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
     
-    for attributes in cache {
-      if attributes.frame.intersects(rect) {
-        visibleLayoutAttributes.append(attributes)
+    for (_, value) in cache {
+      if value.frame.intersects(rect) {
+        visibleLayoutAttributes.append(value)
       }
     }
     return visibleLayoutAttributes
