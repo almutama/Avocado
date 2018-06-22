@@ -11,7 +11,8 @@
 ## Features
 
 - Add custom word cards with your photos
-- Play heads-up speed quiz with your word cards
+- Play heads-up game with your word cards using CoreMotion
 - Trace korean letter of your word cards
 - Listen and repeat korean letter of your word cards
 - Categorize your word cards
+- Enjoy your video captured while playing Heads-up
