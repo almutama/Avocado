@@ -2,11 +2,11 @@ PODS:
   - Action (3.6.0):
     - RxCocoa (~> 4.2.0)
     - RxSwift (~> 4.2.0)
-  - Realm (3.7.3):
-    - Realm/Headers (= 3.7.3)
-  - Realm/Headers (3.7.3)
-  - RealmSwift (3.7.3):
-    - Realm (= 3.7.3)
+  - Realm (3.7.4):
+    - Realm/Headers (= 3.7.4)
+  - Realm/Headers (3.7.4)
+  - RealmSwift (3.7.4):
+    - Realm (= 3.7.4)
   - Reveal-SDK (15)
   - RxCocoa (4.2.0):
     - RxSwift (~> 4.0)
@@ -43,8 +43,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Action: 3d9486d3da02b572b0a034b6c49ac4c3fbcc8b63
-  Realm: f366e954e3330d4915a319e96cc04e2ee09a9ef2
-  RealmSwift: 56f111b1dd439973fbe1c066b067ac4702285441
+  Realm: a469bb59e33f9926102ccaea4349822c53b9117e
+  RealmSwift: a45861b21c180f5cf0f122144b9759fa8dde3e9e
   Reveal-SDK: 25e21896c478b60b948f876043f91570d368d23d
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxGesture: c278eb05b187abd47e11e65464ae4de53ab71d95

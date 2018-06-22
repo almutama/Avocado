@@ -1,6 +1,17 @@
-# Avocado 
-- [AppStore](https://itunes.apple.com/us/app/avocado/id1370443662?mt=8)
+# <a href="https://itunes.apple.com/us/app/avocado/id1370443662?mt=8"><img src="/Screenshots/icon.png" width="50" height="50"/></a> Avocado
 
-## 목적
-- 기존의 가나다 연습이 아닌 부모가 직접 만든 단어장의 단어를 따라쓰기
-- CoreMotion을 활용하여 Heads up 게임 구현
+- Hangul(Korean letter)-tracing + Heads-up(game)
+
+<p align="center"><a href="https://itunes.apple.com/us/app/avocado/id1370443662?mt=8"><img src="Screenshots/app-store-badge.png" width="250" /></a></p>
+
+
+![Alt text](/Screenshots/allshot.jpg)
+
+
+## Features
+
+- Add custom word cards with your photos
+- Play heads-up speed quiz with your word cards
+- Trace korean letter of your word cards
+- Listen and repeat korean letter of your word cards
+- Categorize your word cards
