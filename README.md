@@ -25,7 +25,19 @@
 
 ![Alt text](/Screenshots/allshot.jpg)
 
+
+## Architecture
+
+- LocalService <-> ViewModel <-> ViewController
+- CategoryView : Categorize custom word cards
+- CardView : Word Card list per category
+- PopCardView : Flip word card to get the word of photo
+- TracingView : Practice tracing the letter of the word and listen the sound of the letter
+- GameView : Play Heads-up game with your custom word cards, and enjoy the video captured while doing the game
+
+
 ## Dependency
+
 - SnapKit
 - RealmSwift/RxRealm
 - RxSwift
