@@ -1,6 +1,6 @@
 # <a href="https://itunes.apple.com/us/app/avocado/id1370443662?mt=8"><img src="/Screenshots/icon.png" width="50" height="50"/></a> Avocado
 
-- Hangul(Korean letter)-tracing + Heads-up(game)
+- Hangul(Korean letter)-tracing + Heads-up [demo](https://www.youtube.com/watch?v=Z6dEGXyNk7M)
 
 <p align="center"><a href="https://itunes.apple.com/us/app/avocado/id1370443662?mt=8"><img src="Screenshots/app-store-badge.png" width="200" /></a></p>
 
